@@ -1,8 +1,12 @@
 <template> <!-- скопировано 38:19 -->
   <div>
     <h2>Todo application</h2>
+    <hr>
+    <router-view />
     <router-link to="/">Home</router-link>
     <hr>
+
+
     <AddTodo
         @add-todo="addTodo"
     />
@@ -12,10 +16,10 @@
       <option value="not-completed">Not Completed</option>
     </select>
     <hr>
-    <Loader v-if="loading" />
+<!--    <Loader v-if="loading" />-->
     <TodoList
-        v-else-if="filteredTodos.length"
-        v-bind:todos="filteredTodos"
+        v-if="todos.length"
+        v-bind:todos="todos"
         @remove-todo="removeTodo"
     />
     <p v-else>No todos!</p>
