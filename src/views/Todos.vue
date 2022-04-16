@@ -10,16 +10,18 @@
     <AddTodo
         @add-todo="addTodo"
     />
-    <select v-model="filter">
+
+<!--    <select v-model="filter">
       <option value="all">All</option>
       <option value="completed">Completed</option>
       <option value="not-completed">Not Completed</option>
-    </select>
+    </select>-->
+
     <hr>
-<!--    <Loader v-if="loading" />-->
+   <Loader v-if="loading" />
     <TodoList
-        v-if="filteredTodos.length"
-        v-bind:todos="filteredTodos"
+        v-else-if="todos.length"
+        v-bind:todos="todos"
         @remove-todo="removeTodo"
     />
     <p v-else>No todos!</p>
@@ -29,18 +31,23 @@
 <script> //скопировано 37:56
   import TodoList from "@/components/TodoList";
   import AddTodo from "@/components/AddTodo";
+  import Loader from "@/components/Loader";
   export default {
     name: "App",
     data() {
       return {
         todos: [],
+        loading: true
       };
     },
     mounted() { //данные с сервера
       fetch('https://jsonplaceholder.typicode.com/todos?_limit=10')
               .then(response => response.json())
               .then(json => {
-                this.todos = json
+                setTimeout(()=> {
+                  this.todos = json
+                  this.loading = false},1000)
+
               })
     },
     methods: {
@@ -54,6 +61,7 @@
     components: {
       TodoList,
       AddTodo, //реализация AddTodo
+      Loader
     },
   };
 </script>
