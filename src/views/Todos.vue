@@ -18,8 +18,8 @@
     <hr>
 <!--    <Loader v-if="loading" />-->
     <TodoList
-        v-if="todos.length"
-        v-bind:todos="todos"
+        v-if="filteredTodos.length"
+        v-bind:todos="filteredTodos"
         @remove-todo="removeTodo"
     />
     <p v-else>No todos!</p>
