@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h2>Home page</h2>
+    <h2>Домашняя страница</h2>
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dignissimos eveniet excepturi expedita impedit numquam quae quas tenetur velit voluptas!</p>
+    <p>Добро пожаловать в мой ToDoList v0.0.1</p>
 
     <router-link to="/todos">Todos</router-link> <!-- ссылка на компонент 37:00 --> <!-- index-link загрузка без перезагрузки-->
   </div>
