@@ -11,11 +11,11 @@
         @add-todo="addTodo"
     />
 
-<!--    <select v-model="filter">
+    <select v-model="filter">
       <option value="all">All</option>
       <option value="completed">Completed</option>
       <option value="not-completed">Not Completed</option>
-    </select>-->
+    </select>
 
     <hr>
    <Loader v-if="loading" />
@@ -37,7 +37,8 @@
     data() {
       return {
         todos: [],
-        loading: true
+        loading: true,
+        filter: 'all',
       };
     },
     mounted() { //данные с сервера
@@ -46,7 +47,7 @@
               .then(json => {
                 setTimeout(()=> {
                   this.todos = json
-                  this.loading = false},1000)
+                  this.loading = false},777)
 
               })
     },

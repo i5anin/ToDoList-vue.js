@@ -1,14 +1,16 @@
 <template>
+  <bg>
   <li>
     <span v-bind:class="{ done: todo.completed }">
       <input type="checkbox" v-on:change="todo.completed = !todo.completed" />
       <strong>{{ index + 1 }}</strong>
-      {{ todo.title }}
+      {{ todo.title.toUpperCase() }} <!-- CAPS - названия | реализовать ucFirst - первая буква всегда заглавная -->
     </span>
     <button class="rm"
             v-on:click="$emit('remove-todo', todo.id)"
     >&times;</button>
   </li>
+  </bg>
 </template>
 
 <script>
@@ -20,38 +22,35 @@ export default {
     },
     index: Number,
   },
-};
+  }
 </script>
 
 <style scoped>
+bg{
+    background: #2c3e50;
+  }
+
+
 li {
-  border: 1px solid #bababa;
+  border: 1px solid #bababa; /* обводка item */
   display: flex;
   justify-content: space-between;
   padding: 0.5rem 2rem;
   margin-bottom: 1rem;
 }
-.rm {
-  text-decoration: none;
-  display: inline-block;
-  color: white;
-  padding: 5px 5px;
-  margin: 5px 5px;
-  border-radius: 5px;
-  font-family: 'Montserrat', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  background-image: linear-gradient(to right, #9EEFE1 0%, #4830F0 51%, #9EEFE1 100%);
-  background-size: 200% auto;
-  box-shadow: 0 0 20px rgba(0, 0, 0, .1);
-  transition: .5s;
+.rm {  /* кнопка закрыть */
+  background: #ffffff;
+  color: #000000;
+  border-radius: 50%;
+  border: 1 px solid #c7c7c7;
+  font-weight: bold;
 }
 
 input {
-  margin-right: 1rem;
+  margin-right: 1rem; /* ??? */
 }
 
 .done {
-  text-decoration: line-through;
+  text-decoration: line-through; /* ??? */
 }
 </style>

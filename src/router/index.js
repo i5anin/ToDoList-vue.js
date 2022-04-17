@@ -14,7 +14,7 @@ const router = createRouter({
       component: Home, //домашняя страница 36:25
     },
     {
-      path: "/todos", //регистрация пути 37:19
+      path: "/todos", //регистрация пути 37:19 (Home переводит на todos)
       component: Todos, //динамический иморт 37:40
     },
   ],
