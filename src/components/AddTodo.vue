@@ -1,7 +1,7 @@
 <template>
   <form @submit.prevent="onSubmit">
     <input type="text" v-model="title" /> <!-- атрибут v-model превращает title в модель -->
-    <button type="submit">Create</button>
+    <button type="submit">Создать TODO</button>
   </form>
 </template>
 

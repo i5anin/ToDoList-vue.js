@@ -1,9 +1,9 @@
 <template> <!-- скопировано 38:19 -->
   <div>
-    <h2>Todo application</h2>
+    <h3>Приложение Todo</h3>
     <hr>
     <router-view />
-    <router-link to="/">Home</router-link>
+    <router-link to="/">Вернуться на главную стравницу (Home)</router-link>
     <hr>
 
 
@@ -12,9 +12,9 @@
     />
 
     <select v-model="filter">
-      <option value="all">All</option>
-      <option value="completed">Completed</option>
-      <option value="not-completed">Not Completed</option>
+      <option value="all">Все</option>
+      <option value="completed">Завершены</option>
+      <option value="not-completed">Не завершены</option>
     </select>
 
     <hr>
@@ -24,7 +24,7 @@
         v-bind:todos="todos"
         @remove-todo="removeTodo"
     />
-    <p v-else>No todos!</p>
+    <p v-else></p>
   </div>
 </template>
 
