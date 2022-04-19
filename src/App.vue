@@ -1,18 +1,19 @@
 <template>
   <div id="app">
-    <h1>ToDoList MONEY WAY</h1>
+    <Navbar /> <!-- Добавление КОМПОНЕНТА НА СТРАНИЦУ -->
+    <h1>ToDoList MONEY WAY</h1> <!-- текст app 1 уровнь (Шапка) -->
     <hr>
-    <router-view />
+    <router-view /> <!-- далее app передает создание страницы router 2 уровнь -->
   </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<script>
+  import Navbar from "@/components/Navbar";
+  export default {
+    components: {Navbar}
+  }
+</script>
+
+<style lang="scss">
+  @import "~materialize-css/dist/css/materialize.min.css"; //подключены стили materialize.min
 </style>
