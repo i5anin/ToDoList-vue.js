@@ -1,5 +1,5 @@
 <template>
-  <nav class="blue darken-3">
+  <nav class="green"> <!-- Цвет Nav бара-->
     <div class="nav-wrapper">
       <router-link to="/" class="brand-logo">Tasks</router-link>
       <ul class="right hide-on-med-and-down">
