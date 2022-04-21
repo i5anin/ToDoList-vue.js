@@ -39,9 +39,6 @@ export default {
 } */
 
 /* CSS сегмент */
-bg {
-  background: #2c2c2c;
-}
 li {
   border: 1px solid #e3e3e3; /* обводка item */
   display: flex;

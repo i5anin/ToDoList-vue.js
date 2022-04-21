@@ -4,7 +4,7 @@
     <input type="text" v-model="title" />
     <!-- атрибут v-model превращает title в модель -->
     <button class="waves-effect waves-light btn" type="submit">
-      Создать TODO
+      Создать TODO12
     </button>
   </form>
 </template>
@@ -20,6 +20,7 @@ export default {
   methods: {
     onSubmit() {
       if (this.title.trim()) {
+        //Создание нового TODO
         //если в поле title чтото есть, тогда создать обект:
         const newTodo = {
           //параметры созданного TODO
