@@ -6,7 +6,6 @@
     <router-view />
     <router-link to="/">Вернуться на главную стравницу (Home)</router-link>
     <hr />
-    1
     <AddTodo @add-todo="addTodo" />
 
     <!-- Фильтр: -->
