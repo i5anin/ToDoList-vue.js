@@ -1,9 +1,10 @@
+//Создать TODO новая версия
 <template>
   <div class="row">
     <div class="col s6 offset-s3">
-      <h1>Создать задачу</h1>
+      <h1>Создание задачи</h1>
 
-      <form>
+      <form @submit.prevent="submitHandler">
         <div class="input-field">
           <input
             id="title"
@@ -31,6 +32,10 @@
             >{{ description.length }}/2048</span
           >
         </div>
+        <input type="text" ref="datepicker" />
+        <button class="waves-effect waves-light btn" type="submit">
+          Создать задачу
+        </button>
       </form>
     </div>
   </div>
@@ -42,6 +47,8 @@ export default {
   data: () => ({
     description: "",
     title: "",
+    chips: null,
+    data: null,
   }),
 
   mounted() {
@@ -69,6 +76,7 @@ export default {
       this.$router.push("/list");
     },
   },
+  //уничтожить страницу для экономии памяти:
   destroyed() {
     if (this.date && this.date.destroy) {
       this.date.destroy();

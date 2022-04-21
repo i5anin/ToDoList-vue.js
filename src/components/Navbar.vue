@@ -1,3 +1,4 @@
+//бар сверху
 <template>
   <nav class="green">
     <!-- Green цвет Nav бара-->

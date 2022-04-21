@@ -1,3 +1,4 @@
+//App - инициалтзация приложения
 <template>
   <div id="app">
     <Navbar />

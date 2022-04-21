@@ -1,3 +1,4 @@
+//Старый список задач
 <template>
   <div>
     <ul>
@@ -27,5 +28,5 @@ export default {
 </script>
 
 <style scoped>
-  @import "~materialize-css";
+@import "~materialize-css";
 </style>

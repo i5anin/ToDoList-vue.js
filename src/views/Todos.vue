@@ -1,21 +1,24 @@
+// Фильтр и навигация
 <template>
   <!-- скопировано 38:19 -->
   <div>
     <h3>Приложение Todo</h3>
-    <hr />
     <router-view />
     <router-link to="/">Вернуться на главную стравницу (Home)</router-link>
     <hr />
-
     <AddTodo @add-todo="addTodo" />
 
+    <!-- Фильтр: -->
     <select v-model="filter">
       <option value="all">Все</option>
       <option value="completed">Завершены</option>
       <option value="not-completed">Не завершены</option>
     </select>
+    <!-- DELETE: -->
+    <p align="center">Конструктор сайтов "Нубекс"</p>
+    <div align=" center ">Конструктор сайтов "Нубекс"</div>
+    <center>Конструктор сайтов "Нубекс"</center>
 
-    <hr />
     <Loader v-if="loading" />
     <TodoList
       v-else-if="todos.length"
@@ -27,10 +30,12 @@
 </template>
 
 <script>
-//скопировано 37:56
+//import? скопировано 37:56
 import TodoList from "@/components/TodoList";
 import AddTodo from "@/components/AddTodo";
 import Loader from "@/components/Loader";
+
+//???
 export default {
   name: "App",
   data() {
@@ -40,14 +45,16 @@ export default {
       filter: "all",
     };
   },
+
+  //Данные с сервера:
   mounted() {
-    //данные с сервера
     fetch("//jsonplaceholder.typicode.com/todos?_limit=10")
       .then((response) => response.json())
       .then((json) => {
         setTimeout(() => {
           this.todos = json;
           this.loading = false;
+          //исскуственная задержка сервера:
         }, 777);
       });
   },
@@ -61,7 +68,7 @@ export default {
   },
   components: {
     TodoList,
-    AddTodo, //реализация AddTodo
+    AddTodo,
     Loader,
   },
 };
