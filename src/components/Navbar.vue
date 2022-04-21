@@ -1,34 +1,32 @@
 <template>
-  <nav class="green"> <!-- Цвет Nav бара-->
-    <div class="nav-wrapper">
-      <router-link to="/" class="brand-logo">Tasks</router-link>
+  <nav class="green">
+    <!-- Green цвет Nav бара-->
+    <span class="nav-wrapper">
+      <router-link to="/" class="brand-logo">Логотип</router-link>
+
       <ul class="right hide-on-med-and-down">
-        <router-link
-          tag="li"
-          to="/"
-          exact
-          active-class="active"
-        >
-          <a href="#">Create</a>
-        </router-link>
-        <router-link
-          tag="li"
-          to="/list"
-          active-class="active"
-        >
-          <a href="#">List</a>
-        </router-link>
+        <li>
+          <!-- <li> продолжает на той же строке -->
+          <router-link tag="li" to="/create" exact active-class="active"
+            ><a href="#">Создать</a></router-link
+          >
+        </li>
+        <li>
+          <router-link tag="li" to="/list" exact active-class="active"
+            ><a href="#">Лист</a></router-link
+          >
+        </li>
       </ul>
-    </div>
+    </span>
   </nav>
 </template>
 
 <script>
-export default {}
+export default {};
 </script>
 
 <style lang="scss" scoped>
-  nav {
-    padding: 0 2rem;
-  }
+nav {
+  padding: 0 2rem;
+}
 </style>
