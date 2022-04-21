@@ -6,6 +6,7 @@
     <router-view />
     <router-link to="/">Вернуться на главную стравницу (Home)</router-link>
     <hr />
+    1
     <AddTodo @add-todo="addTodo" />
 
     <!-- Фильтр: -->
@@ -14,10 +15,6 @@
       <option value="completed">Завершены</option>
       <option value="not-completed">Не завершены</option>
     </select>
-    <!-- DELETE: -->
-    <p align="center">Конструктор сайтов "Нубекс"</p>
-    <div align=" center ">Конструктор сайтов "Нубекс"</div>
-    <center>Конструктор сайтов "Нубекс"</center>
 
     <Loader v-if="loading" />
     <TodoList

@@ -52,9 +52,11 @@ export default {
   }),
 
   mounted() {
+    //chips
     this.chips = M.Chips.init(this.$refs.chips, {
       placeholder: "Tеги задач",
     });
+    //date
     this.date = M.Datepicker.init(this.$refs.datepicker, {
       format: "dd.mm.yyyy",
       defaultDate: new Date(),
@@ -76,7 +78,7 @@ export default {
       this.$router.push("/list");
     },
   },
-  //уничтожить страницу для экономии памяти:
+  //destroyed уничтожить страницу для экономии памяти:
   destroyed() {
     if (this.date && this.date.destroy) {
       this.date.destroy();

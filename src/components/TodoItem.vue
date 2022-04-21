@@ -39,8 +39,11 @@ export default {
 } */
 
 /* CSS сегмент */
+bg {
+  background: #2c2c2c;
+}
 li {
-  border: 1px solid #d60b0b; /* обводка item */
+  border: 1px solid #e3e3e3; /* обводка item */
   display: flex;
   justify-content: space-between;
   padding: 0.5rem 2rem;
@@ -48,7 +51,7 @@ li {
 }
 .rm {
   /* кнопка закрыть style*/
-  background: #2c2c2c;
+  /* background: #2c2c2c; */
   color: #ff8c00;
   border-radius: 50%;
   border: 1 px solid #c7c7c7;
