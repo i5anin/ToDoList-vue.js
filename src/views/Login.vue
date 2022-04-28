@@ -1,7 +1,7 @@
 <template>
   <main class="login">
     <section class="forms">
-      <form class="register" @submit.prevent="register">
+      <form v-if="true" class="register" @submit.prevent="register">
         <h2>Register</h2>
         <input
           type="email"
@@ -35,8 +35,8 @@
 </template>
 
 <script>
-// import { ref } from 'vue'
-//import { useStore } from "vuex";
+import { ref } from "vue";
+import { useStore } from "vuex";
 
 export default {
   setup() {
@@ -97,7 +97,6 @@ input {
 
   display: block;
   width: 100%;
-  max-width: 400px;
   margin: 0 auto;
   font-size: 1.5rem;
   margin-bottom: 2rem;

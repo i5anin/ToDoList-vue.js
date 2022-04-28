@@ -2,32 +2,49 @@
 <template>
   <nav class="green">
     <!-- Green цвет Nav бара-->
-    <span class="nav-wrapper">
-      <router-link to="/" class="brand-logo">Логотип</router-link>
-
-      <ul class="right hide-on-med-and-down">
-        <li>
-          <!-- <li> продолжает на той же строке -->
-          <router-link tag="li" to="/create" exact active-class="active"
-            ><a href="#">Создать</a></router-link
-          >
-        </li>
-        <li>
-          <router-link tag="li" to="/list" exact active-class="active"
-            ><a href="#">Лист</a></router-link
-          >
-        </li>
-      </ul>
-    </span>
+    <div class="nav-wrapper">
+      <router-link to="/">Логотип</router-link>
+      <div class="routes">
+        <router-link
+          v-for="route in filteredRoutes"
+          :key="route.path"
+          :to="route.path"
+          exact
+          active-class="active"
+          >{{ route.name }}</router-link
+        >
+      </div>
+    </div>
   </nav>
 </template>
 
 <script>
-export default {};
+import { AUTH_ROUTES, NOT_AUTH_ROUTES } from "../router/routes";
+
+export default {
+  data: () => ({
+    isAuth: true,
+  }),
+  computed: {
+    filteredRoutes() {
+      return this.isAuth ? AUTH_ROUTES : NOT_AUTH_ROUTES;
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
 nav {
   padding: 0 2rem;
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.routes {
+  display: flex;
+  gap: 20px;
 }
 </style>

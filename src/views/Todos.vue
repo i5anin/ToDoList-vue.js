@@ -11,19 +11,19 @@
     <AddTodo @add-todo="addTodo" />
 
     <!-- Фильтр: -->
-    <select v-model="filter">
+    <select class="select" v-model="filter">
       <option value="all">Все</option>
       <option value="completed">Завершены</option>
       <option value="not-completed">Не завершены</option>
     </select>
 
-    <Loader v-if="loading" />
+    <Loader class="loader" v-if="loading" />
     <TodoList
       v-else-if="todos.length"
-      v-bind:todos="todos"
+      :todos="todos"
       @remove-todo="removeTodo"
     />
-    <p v-else></p>
+    <p v-else>Нет задач</p>
   </div>
 </template>
 
@@ -71,3 +71,16 @@ export default {
   },
 };
 </script>
+
+<style>
+.select {
+  display: block;
+  background: black;
+  border-color: black;
+  color: white;
+}
+
+.loader {
+  top: 0;
+}
+</style>
