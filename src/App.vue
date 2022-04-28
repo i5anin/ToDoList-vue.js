@@ -1,41 +1,67 @@
 //App - инициалтзация приложения
 <template>
-  <div id="app">
-    <Navbar />
-    <!-- Добавление КОМПОНЕНТА НА СТРАНИЦУ -->
+  <body>
+    <div id="app">
+      <Navbar />
+      <!-- Добавление КОМПОНЕНТА НА СТРАНИЦУ -->
 
-    <div class="row">
-      <div class="col s6 offset-s3">
-        <h2>ToDoList MONEY WAY</h2>
-        <!-- текст app 1 уровнь (Шапка) -->
-        <router-view />
-        <!-- далее app передает создание страницы router 2 уровнь -->
-        <hr />
-        <center>
-          <a href="https://github.com/Quantum-PizZzA">GitHub</a>
-        </center>
+      <div class="row">
+        <!-- -->
+        <!-- внутреяяня область поля странцы ограничена -->
+        <div class="col s6 offset-s3">
+          <!-- текст app 1 уровнь (Шапка) -->
+          <h2 class="while">ToDoList MONEY WAY</h2>
 
-        <p align="center">Авто проекта Исанин Сергей</p>
+          <!-- далее app передает создание страницы router 2 уровнь -->
+          <router-view />
 
-        <center>
-          <img
-            class="round"
-            align="center"
-            style="height: auto"
-            alt=""
-            width="60"
-            height="60"
-            src="https://avatars.githubusercontent.com/u/92434473?v=4"
-          />
-        </center>
+          <!-- разделитель -->
+          <hr />
+
+          <!-- ссылка на Git -->
+          <center>
+            <a href="https://github.com/Quantum-PizZzA">GitHub</a>
+          </center>
+
+          <!-- подпись снизу страницы -->
+          <p class="while" align="center">Автор проекта Исанин Сергей</p>
+
+          <!-- аватар -->
+          <center>
+            <img src="https://avatars.githubusercontent.com/u/92434473?v=4" />
+          </center>
+        </div>
       </div>
     </div>
-  </div>
+  </body>
 </template>
-
 <script>
+//
+// бар сверху:
 import Navbar from "@/components/Navbar";
-export default {
-  components: { Navbar },
-};
+export default { components: { Navbar } };
 </script>
+
+<style>
+img {
+  align: center;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}
+body {
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; */
+  background: rgb(43, 43, 43);
+}
+/* Не понятно */
+.while {
+  /* text-transform: uppercase;
+  font-size: 2em;
+  letter-spacing: 2px;
+  margin-top: 20px; */
+  color: #ffffff;
+}
+</style>

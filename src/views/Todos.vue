@@ -2,9 +2,11 @@
 <template>
   <!-- скопировано 38:19 -->
   <div>
-    <h3>Приложение Todo</h3>
+    <h3 class="while">Приложение Todo</h3>
     <router-view />
-    <router-link to="/">Вернуться на главную стравницу (Home)</router-link>
+    <router-link to="/" class="while"
+      >Вернуться на главную стравницу (Home)</router-link
+    >
     <hr />
     <AddTodo @add-todo="addTodo" />
 
