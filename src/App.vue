@@ -8,7 +8,7 @@
       <div class="row">
         <!-- -->
         <!-- внутреяяня область поля странцы ограничена -->
-        <div class="col s6 offset-s3">
+        <div class="col offset-s3 offset-m3 s6 m6 l12 center">
           <!-- текст app 1 уровнь (Шапка) -->
           <h2 class="while">ToDoList MONEY WAY</h2>
 
