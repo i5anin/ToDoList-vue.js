@@ -3,7 +3,7 @@
   <body>
     <div class="row">
       <div class="col s6 offset-s3">
-        <h1 class="while">Создание задачи</h1>
+        <h1>Создание задачи</h1>
 
         <form @submit.prevent="submitHandler">
           <div class="input-field">
@@ -14,7 +14,7 @@
               class="validate"
               required
             />
-            <label class="while" for="title">Заголовок</label>
+            <label for="title">Заголовок</label>
             <span class="helper-text" data-error="Заголовок обязателен"></span>
             <!-- Ссылка: https://materializecss.com/text-inputs.html -->
           </div>

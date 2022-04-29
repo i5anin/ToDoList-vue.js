@@ -2,11 +2,9 @@
 <template>
   <!-- скопировано 38:19 -->
   <div>
-    <h3 class="while">Приложение Todo</h3>
+    <h3>Приложение Todo</h3>
     <router-view />
-    <router-link to="/" class="while"
-      >Вернуться на главную стравницу (Home)</router-link
-    >
+    <router-link to="/">Вернуться на главную стравницу (Home)</router-link>
     <hr />
     <AddTodo @add-todo="addTodo" />
 
@@ -75,8 +73,8 @@ export default {
 <style>
 .select {
   display: block;
-  background: black;
-  border-color: black;
+  background: rgb(43, 43, 43);
+  border-color: rgb(43, 43, 43);
   color: white;
 }
 

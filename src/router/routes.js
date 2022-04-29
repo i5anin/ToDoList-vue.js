@@ -3,18 +3,18 @@ import Login from "@/views/Login";
 import Todos from "@/views/Todos";
 import Create from "@/views/Create";
 import Task from "@/views/Task";
-import authGuard from "@/router/auth-guard";
+/*import authGuard from "@/router/auth-guard";*/
 
 export const ROUTES = [
   {
-    path: "/", //главная страница
+    path: "/",
     name: "Home",
-    component: Home, //домашняя страница 36:25
+    component: Home,
   },
   {
-    path: "/login", //главная страница
+    path: "/login",
     name: "Авторизация",
-    component: Login, //домашняя страница 36:25
+    component: Login,
   },
   {
     path: "/todos", //регистрация пути 37:19 (Home переводит на todos)
@@ -30,7 +30,7 @@ export const ROUTES = [
     //динамический иморт 37:40
   },
   {
-    path: "/create", //страница create в router
+    path: "/create",
     name: "Create",
     component: Create,
     beforeEnter: (to, from) => {
@@ -41,7 +41,7 @@ export const ROUTES = [
     },
   },
   {
-    path: "/task/:id", //страница create в router
+    path: "/task/:id",
     name: "task",
     component: Task,
     beforeEnter: (to, from) => {

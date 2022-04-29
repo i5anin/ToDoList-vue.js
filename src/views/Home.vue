@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h3 class="while">{{ title }}</h3>
+    <h3>{{ title }}</h3>
 
-    <p class="while">{{ getSubTitle() }}</p>
+    <p>{{ getSubTitle() }}</p>
 
     <p>Кол-во задач: {{ count }}</p>
 
@@ -10,8 +10,6 @@
     <button @click="changeCount">Увеличить</button>
 
     <router-link to="/todos">Перейти к Todolist (Todos)</router-link>
-    <!-- ссылка на компонент 37:00 -->
-    <!-- index-link загрузка без перезагрузки-->
   </div>
 </template>
 

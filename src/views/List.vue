@@ -1,11 +1,10 @@
-// List
 <template>
   <div>
-    <h1 class="while">Лист</h1>
+    <h1>Лист</h1>
     <hr />
 
     <table v-if="tasks.length"></table>
-    <p v-else class="while">No tasks</p>
+    <p v-else>No tasks</p>
   </div>
 </template>
 

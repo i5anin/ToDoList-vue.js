@@ -1,10 +1,9 @@
-// Область создания ToDo
 <template>
   <form @submit.prevent="onSubmit">
     <input type="text" v-model="title" />
     <!-- атрибут v-model превращает title в модель -->
     <button class="waves-effect waves-light btn" type="submit">
-      Создать TODO12
+      Создать TODO
     </button>
   </form>
 </template>
@@ -12,7 +11,6 @@
 <script>
 export default {
   data() {
-    // модели
     return {
       title: "", //вернуть пустое значение
     };
@@ -20,15 +18,14 @@ export default {
   methods: {
     onSubmit() {
       if (this.title.trim()) {
-        //Создание нового TODO
-        //если в поле title чтото есть, тогда создать обект:
+        //Создание нового TO DO если в поле title чтото есть, тогда создать обект:
         const newTodo = {
-          //параметры созданного TODO
+          //параметры созданного TO DO
           id: Date.now(), //новый  id
-          title: this.title, //название TODO
-          completed: false, //нет смысла сразу завершать TODO
+          title: this.title, //название TO DO
+          completed: false, //нет смысла сразу завершать TO DO
         };
-        this.$emit("add-todo", newTodo); //"Пользовательские события" сообщить app компненту что у нас появился новый TODO
+        this.$emit("add-todo", newTodo); //"Пользовательские события" сообщить app компненту что у нас появился новый TO DO
         this.title = "";
       }
     },
