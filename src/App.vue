@@ -14,7 +14,7 @@
 
 <script>
 import Navbar from "@/components/Navbar";
-import LowerVacation from "@/views/LowerVacation";
+import Footer from "@/views/Footer";
 export default { components: { Navbar, LowerVacation } };
 </script>
 
