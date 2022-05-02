@@ -28,5 +28,5 @@ export default {
 </script>
 
 <style scoped>
-@import "~materialize-css";
+@import "../../node_modules/materialize-css";
 </style>

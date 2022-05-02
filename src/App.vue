@@ -6,7 +6,7 @@
         <h2 class="while">ToDoList MONEY WAY</h2>
         <router-view />
         <hr />
-        <LowerVacation />
+        <Footer />
       </div>
     </div>
   </div>
@@ -15,7 +15,7 @@
 <script>
 import Navbar from "@/components/Navbar";
 import Footer from "@/views/Footer";
-export default { components: { Navbar, LowerVacation } };
+export default { components: { Navbar, Footer } };
 </script>
 
 <style></style>
