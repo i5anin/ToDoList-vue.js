@@ -3,7 +3,7 @@
     <Navbar />
     <div class="row">
       <div class="col offset-s3 offset-m3 s6 m6 l12 center">
-        <h2 class="while">ToDoList MONEY WAY</h2>
+        <h3 class="while">ToDoList MONEY WAY</h3>
         <router-view />
         <hr />
         <Footer />

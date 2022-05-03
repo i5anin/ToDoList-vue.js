@@ -2,14 +2,19 @@
 <template>
   <li>
     <span :class="{ done: todo.completed }">
-      <input type="checkbox" @change="todo.completed = !todo.completed" />
-      <!-- Индекс задачи: убрать пробелы &nbsp; -->
+      <label>
+        <input
+          type="checkbox"
+          name=""
+          @change="todo.completed = !todo.completed"
+        />
+      </label>
+      <!-- Индекс задачи: -->
       <strong class="index">{{ index + 1 }} </strong>
-      <!-- CAPS - названия | реализовать ucFirst - первая буква всегда заглавная -->
-      <!-- title - текст TODO -->
+      <!-- CAPS - названия | title - текст TODO -->
       {{ todo.title.toUpperCase() }}
     </span>
-    <!-- изменить цвет при наведении на кнопку удалить задачу: -->
+    <!-- TODO изменить цвет при наведении на кнопку удалить задачу: -->
     <button
       class="btn-floating btn-small waves-effect waves-teal btn-flat waves-light"
       @click="handleDelete(todo.id)"
@@ -17,6 +22,26 @@
       &times;
     </button>
   </li>
+  <table class="table">
+    <thead></thead>
+    <tbody>
+      <tr>
+        <th scope="row">{{ index + 1 }}</th>
+        <td bgcolor="#8b0000">{{ todo.title.toUpperCase() }}</td>
+        <td>Work</td>
+        <!-- x-->
+        <td>@Work</td>
+        <!-- TODO изменить цвет при наведении на кнопку удалить задачу: -->
+        <button
+          class="btn-floating btn-small waves-effect waves-teal btn-flat waves-light"
+          @click="handleDelete(todo.id)"
+        >
+          &times;
+        </button>
+        <!-- x-->
+      </tr>
+    </tbody>
+  </table>
 </template>
 
 <script>
@@ -32,6 +57,7 @@ export default {
   },
   methods: {
     handleDelete(id) {
+      // удаление задачи
       this.$emit("remove-todo", id);
     },
   },
@@ -42,32 +68,28 @@ export default {
 .index {
   margin-right: 8px;
 }
-/* bg {
-  background: #2c3e50;
-} */
 
-/* CSS сегмент */
 li {
   border: 1px solid #e3e3e3; /* обводка item */
   display: flex;
-  justify-content: space-between;
-  padding: 0.5rem 2rem;
+  justify-content: space-between; /* расположение по краям */
+  padding: 0.5rem 2rem; /* Применяется для всех 4 сторон */
   margin-bottom: 1rem;
-}
-.rm {
-  /* кнопка закрыть style*/
-  /* background: #2c2c2c; */
-  color: #ff8c00;
-  border-radius: 50%;
-  /*border: 1 px solid #c7c7c7;*/
-  font-weight: bold;
 }
 
 input {
-  margin-right: 1rem; /* ??? */
+  margin-right: 1rem; /* отступ справа */
+}
+/* новое */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /*font-family: "poppius" б, sans-serif;*/
 }
 
-.done {
-  text-decoration: line-through; /* ??? */
+td {
+  border: 2px solid darkblue;
+  width: 1000px;
 }
 </style>

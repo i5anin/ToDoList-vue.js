@@ -1,6 +1,16 @@
 <template>
   <div>
     <ul>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Название</th>
+            <th scope="col">Last</th>
+            <th scope="col">Тип</th>
+          </tr>
+        </thead>
+      </table>
       <TodoItem
         v-for="(todo, i) in todos"
         :key="i"

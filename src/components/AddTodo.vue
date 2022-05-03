@@ -1,10 +1,15 @@
 <template>
+  <!-- событие submit больше не будет перезагружать страницу -->
   <form @submit.prevent="onSubmit">
-    <input type="text" v-model="title" />
     <!-- атрибут v-model превращает title в модель -->
-    <button class="waves-effect waves-light btn" type="submit">
-      Создать TODO
-    </button>
+    <input
+      placeholder="Текст задачи"
+      class="form-control"
+      type="text"
+      v-model="title"
+    />
+    <!--  кнопка создания нового TO DO-->
+    <button class="waves-effect waves-light btn" type="submit">Создать</button>
   </form>
 </template>
 
@@ -12,7 +17,8 @@
 export default {
   data() {
     return {
-      title: "", //вернуть пустое значение
+      //вернуть пустое значение
+      title: "",
     };
   },
   methods: {
@@ -20,13 +26,13 @@ export default {
       if (this.title.trim()) {
         //Создание нового TO DO если в поле title чтото есть, тогда создать обект:
         const newTodo = {
-          //параметры созданного TO DO
+          //параметры созданного TO DO:
           id: Date.now(), //новый  id
           title: this.title, //название TO DO
           completed: false, //нет смысла сразу завершать TO DO
         };
         this.$emit("add-todo", newTodo); //"Пользовательские события" сообщить app компненту что у нас появился новый TO DO
-        this.title = "";
+        this.title = ""; //значение посе ввода
       }
     },
   },
@@ -35,10 +41,10 @@ export default {
 
 <style scoped>
 form {
-  display: flex;
+  display: flex; /* расположение поля для создания */
 }
 
 input {
-  width: 400px;
+  width: 400px; /* ??? */
 }
 </style>

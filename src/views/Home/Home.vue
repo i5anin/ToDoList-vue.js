@@ -5,6 +5,7 @@
     <p>{{ getSubTitle() }}</p>
 
     <p>Кол-во задач: {{ count }}</p>
+    <input type="checkbox" @change="todo.completed = !todo.completed" />
 
     <button @click="changeTitle">Изменить title</button>
     <button @click="changeCount">Увеличить</button>

@@ -1,7 +1,7 @@
 import Home from "@/views/Home/Home";
 import Login from "@/views/Login/Login";
 import Todos from "@/views/List/Todos";
-import Create from "@/views/Create";
+import Create from "@/views/Create/Create";
 import Task from "@/views/Task";
 /*import authGuard from "@/router/auth-guard";*/
 

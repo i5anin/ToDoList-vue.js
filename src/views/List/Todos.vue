@@ -2,10 +2,11 @@
 <template>
   <!-- скопировано 38:19 -->
   <div>
-    <h3>Приложение Todo</h3>
+    <h5>Приложение Todo</h5>
     <router-view />
-    <router-link to="/">Вернуться на главную стравницу (Home)</router-link>
-    <hr />
+    <!--    todo переместить в шапку-->
+    <!--    <router-link to="/">Вернуться на главную стравницу (Home)</router-link>-->
+    <!--    <hr />-->
     <AddTodo @add-todo="addTodo" />
 
     <!-- Фильтр: -->
