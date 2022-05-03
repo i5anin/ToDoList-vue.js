@@ -1,47 +1,19 @@
 //Обекты внутри | HTML сегмент |
 <template>
-  <li>
-    <span :class="{ done: todo.completed }">
-      <label>
-        <input
-          type="checkbox"
-          name=""
-          @change="todo.completed = !todo.completed"
-        />
-      </label>
-      <!-- Индекс задачи: -->
-      <strong class="index">{{ index + 1 }} </strong>
-      <!-- CAPS - названия | title - текст TODO -->
-      {{ todo.title.toUpperCase() }}
-    </span>
-    <!-- TODO изменить цвет при наведении на кнопку удалить задачу: -->
+  <div class="row">
+    <div class="col s1">{{ index + 1 }}</div>
+    <div align="left" class="col s6">{{ todo.title.toUpperCase() }}</div>
+    <div class="col s2">Тег</div>
+    <div class="col s2">Примечание</div>
     <button
       class="btn-floating btn-small waves-effect waves-teal btn-flat waves-light"
       @click="handleDelete(todo.id)"
+      align="center"
     >
       &times;
     </button>
-  </li>
-  <table class="table">
-    <thead></thead>
-    <tbody>
-      <tr>
-        <th scope="row">{{ index + 1 }}</th>
-        <td bgcolor="#8b0000">{{ todo.title.toUpperCase() }}</td>
-        <td>Work</td>
-        <!-- x-->
-        <td>@Work</td>
-        <!-- TODO изменить цвет при наведении на кнопку удалить задачу: -->
-        <button
-          class="btn-floating btn-small waves-effect waves-teal btn-flat waves-light"
-          @click="handleDelete(todo.id)"
-        >
-          &times;
-        </button>
-        <!-- x-->
-      </tr>
-    </tbody>
-  </table>
+  </div>
+  <!--  <hr />-->
 </template>
 
 <script>

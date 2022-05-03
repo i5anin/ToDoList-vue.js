@@ -1,16 +1,16 @@
 <template>
   <div>
     <ul>
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Название</th>
-            <th scope="col">Last</th>
-            <th scope="col">Тип</th>
-          </tr>
-        </thead>
-      </table>
+      <strong>
+        <div class="row tableHeader">
+          <div class="col s1">#</div>
+          <div class="col s6">Название</div>
+          <div class="col s2">Тег</div>
+          <div class="col s2">Примечание</div>
+        </div>
+      </strong>
+      <hr />
+
       <TodoItem
         v-for="(todo, i) in todos"
         :key="i"
@@ -39,4 +39,7 @@ export default {
 
 <style scoped>
 @import "../../node_modules/materialize-css";
+.tableHeader {
+  font-size: 105%;
+}
 </style>
