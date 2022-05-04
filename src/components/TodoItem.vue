@@ -1,6 +1,6 @@
 //Обекты внутри | HTML сегмент |
 <template>
-  <div class="row">
+  <div class="row tab">
     <div class="col s1">{{ index + 1 }}</div>
     <div align="left" class="col s6">{{ todo.title.toUpperCase() }}</div>
     <div class="col s2">Тег</div>
@@ -41,8 +41,8 @@ export default {
   margin-right: 8px;
 }
 
-li {
-  border: 1px solid #e3e3e3; /* обводка item */
+.tab {
+  /*border: 1px solid #2b2b2b; !* обводка item *!*/
   display: flex;
   justify-content: space-between; /* расположение по краям */
   padding: 0.5rem 2rem; /* Применяется для всех 4 сторон */
@@ -51,17 +51,5 @@ li {
 
 input {
   margin-right: 1rem; /* отступ справа */
-}
-/* новое */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  /*font-family: "poppius" б, sans-serif;*/
-}
-
-td {
-  border: 2px solid darkblue;
-  width: 1000px;
 }
 </style>

@@ -2,7 +2,7 @@
   <div>
     <ul>
       <strong>
-        <div class="row tableHeader">
+        <div class="row tabH tableHeader">
           <div class="col s1">#</div>
           <div class="col s6">Название</div>
           <div class="col s2">Тег</div>
@@ -41,5 +41,11 @@ export default {
 @import "../../node_modules/materialize-css";
 .tableHeader {
   font-size: 105%;
+}
+.tabH {
+  display: flex;
+  justify-content: space-between; /* расположение по краям */
+  padding: 0.5rem 2rem; /* Применяется для всех 4 сторон */
+  margin-bottom: 1rem;
 }
 </style>

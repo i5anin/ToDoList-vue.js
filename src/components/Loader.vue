@@ -1,6 +1,6 @@
 мпрвап
 <template>
-  <div class="lds-roller">
+  <div class="lds-roller location">
     <div></div>
     <div></div>
     <div></div>
@@ -97,5 +97,10 @@
   100% {
     transform: rotate(360deg);
   }
+}
+
+.location {
+  padding: 10rem 10rem;
+  margin-bottom: 10rem;
 }
 </style>
