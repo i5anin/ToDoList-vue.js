@@ -52,7 +52,7 @@ export default {
           this.todos = json;
           this.loading = false;
           //исскуственная задержка сервера:
-        }, 777);
+        }, 1555);
       });
   },
   methods: {

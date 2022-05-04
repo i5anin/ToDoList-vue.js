@@ -99,6 +99,7 @@
   }
 }
 
+/*что за значсения почему они работают?*/
 .location {
   padding: 10rem 10rem;
   margin-bottom: 10rem;
