@@ -1,8 +1,12 @@
-import Home from "@/views/Home/Home";
-import Login from "@/views/Login/Login";
-import Todos from "@/views/List/Todos";
-import Create from "@/views/Create/Create";
+import Home from "@/views/Page/Home";
+import Login from "@/views/Page/Login";
+import Todos from "@/views/Page/Todos";
+import Create from "@/views/Page/Create";
 import Task from "@/views/Task";
+import Register from "@/views/Page/Register";
+import SignIn from "@/views/Page/SignIn";
+import Test from "@/views/Test"; //DELETE
+
 /*import authGuard from "@/router/auth-guard";*/
 
 export const ROUTES = [
@@ -13,11 +17,26 @@ export const ROUTES = [
   },
   {
     path: "/login",
-    name: "Авторизация",
+    name: "Логин",
     component: Login,
   },
   {
-    path: "/todos", //регистрация пути 37:19 (Home переводит на todos)
+    path: "/test",
+    name: "Логин",
+    component: Test, //DELETE
+  },
+  {
+    path: "/register",
+    name: "Регистрация",
+    component: Register,
+  },
+  {
+    path: "/sign-in",
+    name: "Авторизация",
+    component: SignIn,
+  },
+  {
+    path: "/todos",
     name: "Todos",
     component: Todos,
     beforeEnter: (to, from) => {
@@ -26,8 +45,6 @@ export const ROUTES = [
       // }
       return true;
     },
-
-    //динамический иморт 37:40
   },
   {
     path: "/create",
@@ -55,26 +72,31 @@ export const ROUTES = [
 
 export const NOT_AUTH_ROUTES = [
   {
-    path: "/login", //главная страница
+    path: "/login",
     name: "Авторизация",
-    component: Login, //домашняя страница 36:25
+    component: Login,
   },
 ];
 
 export const AUTH_ROUTES = [
   {
-    path: "/todos", //регистрация пути 37:19 (Home переводит на todos)
-    name: "Todos",
-    component: Todos, //динамический иморт 37:40
+    path: "/todos",
+    name: "Задачи",
+    component: Todos,
   },
   {
-    path: "/create", //страница create в router
-    name: "Create",
-    component: Create,
+    path: "/test", //DELETE
+    name: "Тест",
+    component: Test,
   },
   {
-    path: "/task/:id", //страница create в router
-    name: "task",
+    path: "/register",
+    name: "Регистрация",
+    component: Register,
+  },
+  {
+    path: "/sign-in",
+    name: "Войти",
     component: Task,
   },
 ];

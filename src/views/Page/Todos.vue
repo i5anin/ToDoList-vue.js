@@ -1,12 +1,8 @@
 // Фильтр и навигация
 <template>
-  <!-- скопировано 38:19 -->
   <div>
     <h5>Приложение Todo</h5>
     <router-view />
-    <!--    todo переместить в шапку-->
-    <!--    <router-link to="/">Вернуться на главную стравницу (Home)</router-link>-->
-    <!--    <hr />-->
     <AddTodo @add-todo="addTodo" />
 
     <!-- Фильтр: -->
@@ -27,7 +23,6 @@
 </template>
 
 <script>
-//import? скопировано 37:56
 import TodoList from "@/components/TodoList";
 import AddTodo from "@/components/AddTodo";
 import Loader from "@/components/Loader";
