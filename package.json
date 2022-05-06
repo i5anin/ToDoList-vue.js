@@ -10,7 +10,7 @@
     "babel": "^6.23.0",
     "core-js": "^3.8.3",
     "css": "^3.0.0",
-    "firebase": "^9.6.11",
+    "firebase": "^9.7.0",
     "materialize-css": "^1.0.0-rc.2",
     "progressive": "^0.1.0",
     "vue": "^3.2.13",

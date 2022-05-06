@@ -1,20 +1,17 @@
 html {
-    color: #f3f3f3 !important;
+    color: white !important;
 }
 body {
     background: rgb(43, 46, 47);
 }
-
-body {
-    background: rgb(43, 46, 47);
-}
-
+/* фильтр */
 .select {
     display: block;
     background: rgb(43, 46, 47);
     border-color: rgb(43, 46, 47);
     color: white;
 }
+/* кнопка удаления обекта */
 .btn-floating{
     color: white;
 }
