@@ -1,31 +1,31 @@
 <template>
-  <h1>Создать учетную запись</h1>
-  <p><input type="text" placeholder="Email" v-model="email" /></p>
-  <p><input type="password" placeholder="Пароль" v-model="password" /></p>
-  <p>
-    <button class="waves-effect waves-light btn" @click="register">
-      Отправить
-    </button>
-  </p>
+  <div class="container">
+    <div class="container">
+      <div class="container">
+        <h3>Создать учетную запись</h3>
+        <input type="text" placeholder="Email" v-model="email" />
+        <input type="password" placeholder="Пароль" v-model="password" />
+        <button class="waves-effect waves-light btn" @click="register">
+          Отправить
+        </button>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
-import { initializeApp, createUserWithEmailAndPassword } from "firebase/auth";
-//import firebase from "firebase;
-import { getAuth } from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "@/firebase";
 import { useRouter } from "vue-router"; // import router
 const email = ref("");
 const password = ref("");
 const router = useRouter(); // get a reference to our vue router
-const auth = getAuth();
 const register = () => {
-  firebase
-    .auth() // get the auth api
-    .createUserWithEmailAndPassword(email.value, password.value) // need .value because ref()
+  createUserWithEmailAndPassword(auth, email.value, password.value) // need .value because ref()
     .then((data) => {
       console.log("Successfully registered!");
-      router.push("/feed"); // redirect to the feed
+      router.push("/todo"); // redirect to the feed
     })
     .catch((error) => {
       console.log(error.code);

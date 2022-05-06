@@ -1,30 +1,33 @@
 <template>
-  <h1>Войти</h1>
-  <p><input type="text" placeholder="Email" v-model="email" /></p>
-  <p><input type="password" placeholder="Пароль" v-model="password" /></p>
-  <p v-if="errMsg">{{ errMsg }}</p>
-  <p>
-    <button class="waves-effect waves-light btn" @click="signIn">
-      Отправить
-    </button>
-  </p>
+  <h2>Войти</h2>
+  <div class="container">
+    <div class="container">
+      <div class="container">
+        <input type="text" placeholder="Email" v-model="email" />
+        <input type="password" placeholder="Пароль" v-model="password" />
+        <p v-if="errMsg">{{ errMsg }}</p>
+        <button class="waves-effect waves-light btn" @click="signIn">
+          Войти
+        </button>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "@/firebase";
 import { useRouter } from "vue-router"; // import router
 const email = ref("");
 const password = ref("");
 const errMsg = ref(); // ERROR MESSAGE
 const router = useRouter(); // get a reference to our vue router
 const signIn = () => {
-  // we also renamed this method
-  firebase.auth();
-  signInWithEmailAndPassword(email.value, password.value) // THIS LINE CHANGED
+  signInWithEmailAndPassword(auth, email.value, password.value) // THIS LINE CHANGED
     .then((data) => {
       console.log("Successfully logged in!");
-      router.push("/feed"); // redirect to the feed
+      router.push("/todo"); // redirect to the feed
     })
     .catch((error) => {
       switch (error.code) {

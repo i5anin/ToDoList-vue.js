@@ -16,7 +16,15 @@ body {
     color: white;
 }
 
+input{
+    color: white !important;
+}
+/* Отладка */
+/* Отладка */
 /*div {*/
-/*  border-color: #faff00 !important;*/
-/*  border-style: solid;*/
+/*  border: 1px solid #00c939 !important;;*/
+/*}*/
+
+/*.tab {*/
+/*    border: 1px solid #ffffff; !* обводка item *!*/
 /*}*/
