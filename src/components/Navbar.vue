@@ -3,7 +3,7 @@
     <!-- Green цвет Nav бара-->
     <div class="nav-wrapper">
       <router-link to="/">
-        <img src="../png/to-do.png" width="80" height="80"
+        <img src="../png/to-do.png" width="78" height="78"
       /></router-link>
       <div class="routes">
         <router-link

@@ -23,8 +23,8 @@
 </template>
 
 <script>
-import TodoList from "@/components/TodoList";
-import AddTodo from "@/components/AddTodo";
+import TodoList from "@/components/Todo-List";
+import AddTodo from "@/components/Todo-Add";
 import Loader from "@/components/Loader";
 
 //???
