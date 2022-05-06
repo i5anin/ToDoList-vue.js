@@ -12,7 +12,7 @@
 
 <script setup>
 import { ref } from "vue";
-import firebase from "firebase/app";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useRouter } from "vue-router"; // import router
 const email = ref("");
 const password = ref("");
@@ -20,9 +20,8 @@ const errMsg = ref(); // ERROR MESSAGE
 const router = useRouter(); // get a reference to our vue router
 const signIn = () => {
   // we also renamed this method
-  firebase
-    .auth()
-    .signInWithEmailAndPassword(email.value, password.value) // THIS LINE CHANGED
+  firebase.auth();
+  signInWithEmailAndPassword(email.value, password.value) // THIS LINE CHANGED
     .then((data) => {
       console.log("Successfully logged in!");
       router.push("/feed"); // redirect to the feed

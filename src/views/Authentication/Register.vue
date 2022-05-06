@@ -11,11 +11,14 @@
 
 <script setup>
 import { ref } from "vue";
-import { initializeApp } from "firebase/app";
+import { initializeApp, createUserWithEmailAndPassword } from "firebase/auth";
+//import firebase from "firebase;
+import { getAuth } from "firebase/auth";
 import { useRouter } from "vue-router"; // import router
 const email = ref("");
 const password = ref("");
 const router = useRouter(); // get a reference to our vue router
+const auth = getAuth();
 const register = () => {
   firebase
     .auth() // get the auth api
