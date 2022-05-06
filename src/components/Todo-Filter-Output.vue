@@ -6,11 +6,17 @@
     <AddTodo @add-todo="addTodo" />
 
     <!-- Фильтр: -->
-    <select class="select" v-model="filter">
-      <option value="all">Все</option>
-      <option value="completed">Завершены</option>
-      <option value="not-completed">Не завершены</option>
-    </select>
+    <div class="container">
+      <div class="container">
+        <div class="container">
+          <select class="select" v-model="filter">
+            <option value="all">Все</option>
+            <option value="completed">Завершенные</option>
+            <option value="not-completed">Не завершенные</option>
+          </select>
+        </div>
+      </div>
+    </div>
 
     <Loader class="loader" v-if="loading" />
     <TodoList

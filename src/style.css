@@ -1,5 +1,5 @@
 html {
-    color: white !important;
+    color: #ffffff !important;
 }
 body {
     background: rgb(43, 46, 47);
@@ -9,7 +9,10 @@ body {
     display: block;
     background: rgb(43, 46, 47);
     border-color: rgb(43, 46, 47);
-    color: white;
+    color: #ffffff;
+}
+select:focus {
+    outline: 1px solid #2b2e2f;
 }
 /* кнопка удаления обекта */
 .btn-floating{
