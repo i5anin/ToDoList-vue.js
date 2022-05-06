@@ -18,9 +18,4 @@ import Footer from "@/views/Footer";
 export default { components: { Navbar, Footer } };
 </script>
 
-<style>
-/*div {
-  border-color: #faff00 !important;
-  border-style: solid;
-}*/
-</style>
+<style></style>

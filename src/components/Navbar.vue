@@ -1,5 +1,5 @@
 <template>
-  <nav class="green">
+  <nav class="#0d7569 teal darken-1">
     <!-- Green цвет Nav бара-->
     <div class="nav-wrapper">
       <router-link to="/">

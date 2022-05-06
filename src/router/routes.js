@@ -4,7 +4,7 @@ import Todos from "@/components/Todo-Filter-Output";
 import Task from "@/views/delete/Task";
 import Register from "@/views/Authentication/Register";
 import SignIn from "@/views/Authentication/SignIn";
-import Test from "@/views/Test"; //DELETE
+import Test from "@/views/delete/Test"; //DELETE
 // import Create from "@/views/Page/Create";
 
 /*import authGuard from "@/router/auth-guard";*/
