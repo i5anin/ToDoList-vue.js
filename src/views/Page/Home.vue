@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     getSubTitle() {
-      return "Добро пожаловать в мой ToDoList v0.0.1"; //Добро пожаловать в мой ToDoList v0.0.1
+      return "Добро пожаловать в ToDoList v0.0.2"; //Добро пожаловать в мой ToDoList v0.0.1
     },
     sum() {
       console.log(2 + 2);

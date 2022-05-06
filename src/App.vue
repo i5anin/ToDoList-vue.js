@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <Navbar />
-    <div class="row">
-      <div class="col offset-s3 offset-m3 s6 m6 l12 center">
+    <div class="container">
+      <div class="col s12 m4 l8 center">
         <h3 class="while">ToDoList MONEY WAY</h3>
         <router-view />
         <hr />
@@ -18,4 +18,9 @@ import Footer from "@/views/Footer";
 export default { components: { Navbar, Footer } };
 </script>
 
-<style></style>
+<style>
+div {
+  border-color: #faff00 !important;
+  border-style: solid;
+}
+</style>

@@ -2,7 +2,9 @@
   <nav class="green">
     <!-- Green цвет Nav бара-->
     <div class="nav-wrapper">
-      <router-link to="/">Логотип</router-link>
+      <router-link to="/">
+        <img src="../png/to-do.png" width="80" height="80"
+      /></router-link>
       <div class="routes">
         <router-link
           v-for="route in filteredRoutes"

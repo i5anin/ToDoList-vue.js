@@ -1,7 +1,7 @@
 import Home from "@/views/Page/Home";
 import Login from "@/views/Page/Login";
 import Todos from "@/views/Page/Todos";
-import Create from "@/views/Page/Create";
+// import Create from "@/views/Page/Create";
 import Task from "@/views/Task";
 import Register from "@/views/Page/Register";
 import SignIn from "@/views/Page/SignIn";
@@ -39,35 +39,35 @@ export const ROUTES = [
     path: "/todos",
     name: "Todos",
     component: Todos,
-    beforeEnter: (to, from) => {
-      // if (from.query.isAuth == null || from.query.isAuth === false) {
-      //   return { path: "/login", query: {}, hash: to.hash };
-      // }
-      return true;
-    },
+    // beforeEnter: (to, from) => {
+    //   // if (from.query.isAuth == null || from.query.isAuth === false) {
+    //   //   return { path: "/login", query: {}, hash: to.hash };
+    //   // }
+    //   return true;
+    // },
   },
-  {
-    path: "/create",
-    name: "Create",
-    component: Create,
-    beforeEnter: (to, from) => {
-      if (from.query.isAuth == null || from.query.isAuth === false) {
-        return { path: "/login", query: {}, hash: to.hash };
-      }
-      return true;
-    },
-  },
-  {
-    path: "/task/:id",
-    name: "task",
-    component: Task,
-    beforeEnter: (to, from) => {
-      if (from.query.isAuth == null || from.query.isAuth === false) {
-        return { path: "/login", query: {}, hash: to.hash };
-      }
-      return true;
-    },
-  },
+  // {
+  //   path: "/create",
+  //   name: "Create",
+  //   component: Create,
+  //   beforeEnter: (to, from) => {
+  //     if (from.query.isAuth == null || from.query.isAuth === false) {
+  //       return { path: "/login", query: {}, hash: to.hash };
+  //     }
+  //     return true;
+  //   },
+  // },
+  // {
+  //   path: "/task/:id",
+  //   name: "task",
+  //   component: Task,
+  //   beforeEnter: (to, from) => {
+  //     if (from.query.isAuth == null || from.query.isAuth === false) {
+  //       return { path: "/login", query: {}, hash: to.hash };
+  //     }
+  //     return true;
+  //   },
+  // },
 ];
 
 export const NOT_AUTH_ROUTES = [
@@ -83,11 +83,6 @@ export const AUTH_ROUTES = [
     path: "/todos",
     name: "Задачи",
     component: Todos,
-  },
-  {
-    path: "/test", //DELETE
-    name: "Тест",
-    component: Test,
   },
   {
     path: "/register",
