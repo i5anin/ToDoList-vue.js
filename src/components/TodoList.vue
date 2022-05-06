@@ -39,9 +39,9 @@ export default {
 
 <style scoped>
 @import "../../node_modules/materialize-css";
-/*.tableHeader {
+.tableHeader {
   font-size: 101%;
-}*/
+}
 .tabH {
   display: flex;
   justify-content: space-between; /* расположение по краям */

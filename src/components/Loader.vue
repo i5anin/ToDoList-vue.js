@@ -1,4 +1,3 @@
-мпрвап
 <template>
   <div class="lds-roller location">
     <div></div>
@@ -99,9 +98,8 @@
   }
 }
 
-/*что за значсения почему они работают?*/
 .location {
-  padding: 10rem 10rem;
-  margin-bottom: 10rem;
+  margin-top: 20rem;
+  margin-bottom: 20rem;
 }
 </style>

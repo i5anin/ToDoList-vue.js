@@ -19,8 +19,8 @@ export default { components: { Navbar, Footer } };
 </script>
 
 <style>
-div {
+/*div {
   border-color: #faff00 !important;
   border-style: solid;
-}
+}*/
 </style>
