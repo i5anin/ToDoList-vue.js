@@ -18,10 +18,18 @@ select:focus {
 .btn-floating{
     color: white;
 }
-
-input{
-    color: white !important;
+/* расположение текста в кнопке */
+.waves-effect {
+    overflow: visible;
 }
+.btn {
+    background-color: #26a69a;
+}
+/*цвет теста внутри*/
+input{
+    color: #ffffff !important;
+}
+
 /* Отладка */
 /* Отладка */
 /*div {*/
