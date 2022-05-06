@@ -1,18 +1,25 @@
+:root {
+    --white: #f2f2f2;
+    --theme: #208b81;
+    --bg-black: #2b2e2f;
+
+}
+
 html {
     color: #ffffff !important;
 }
 body {
-    background: rgb(43, 46, 47);
+    background: var(--bg-black);
 }
 /* фильтр */
 .select {
     display: block;
-    background: rgb(43, 46, 47);
-    border-color: rgb(43, 46, 47);
-    color: #ffffff;
+    background: var(--bg-black);
+    border-color: var(--bg-black);
+    color: var(--white);
 }
 select:focus {
-    outline: 1px solid #2b2e2f;
+    outline: 1px solid var(--bg-black);
 }
 /* кнопка удаления обекта */
 .btn-floating{
@@ -23,14 +30,20 @@ select:focus {
     overflow: visible;
 }
 .btn {
-    background-color: #26a69a;
+    background-color: var(--theme);
 }
 /*цвет теста внутри*/
 input{
-    color: #ffffff !important;
+    color: var(--white) !important;
 }
 
-/* Отладка */
+/*.btn-floating {*/
+/*    background-color:var(--theme);*/
+
+/*}*/
+/*.btn-floating {*/
+/*    background-color:var(--theme);*/
+/*}*/
 /* Отладка */
 /*div {*/
 /*  border: 1px solid #00c939 !important;;*/

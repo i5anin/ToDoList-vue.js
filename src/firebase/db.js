@@ -1,21 +1,13 @@
-import firebase from "firebase/app";
-import "firebase/firestore";
+import { getDatabase } from "firebase/database";
+const database = getDatabase();
 
-// Get a Firestore instance
+import { getDatabase, ref, set } from "firebase/database";
 
-var firebaseConfig = {
-  apiKey: "AIzaSyCfg2LUGZUE3lPWly711a7EKEPJ2Mexni0",
-  authDomain: "todolist-money-way.firebaseapp.com",
-  projectId: "todolist-money-way",
-  storageBucket: "todolist-money-way.appspot.com",
-  messagingSenderId: "769898748189",
-  appId: "1:769898748189:web:174f46161646ee3d0f69f4",
-  measurementId: "G-6FX2T4KWPY",
-};
-
-export const db = firebase.initializeApp(firebaseConfig).firestore();
-
-// Export types that exists in Firestore
-// This is not always necessary, but it's used in other examples
-const { Timestamp, GeoPoint } = firebase.firestore;
-export { Timestamp, GeoPoint };
+function writeUserData(userId, name, email, imageUrl) {
+  const db = getDatabase();
+  set(ref(db, "users/" + userId), {
+    username: name,
+    email: email,
+    profile_picture: imageUrl,
+  });
+}
