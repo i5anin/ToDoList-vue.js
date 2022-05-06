@@ -67,13 +67,6 @@ export default {
 </script>
 
 <style>
-.select {
-  display: block;
-  background: rgb(43, 43, 43);
-  border-color: rgb(43, 43, 43);
-  color: white;
-}
-
 .loader {
   top: 0;
 }

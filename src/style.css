@@ -4,6 +4,21 @@ html {
 body {
     background: rgb(43, 46, 47);
 }
+
+body {
+    background: rgb(43, 46, 47);
+}
+
+.select {
+    display: block;
+    background: rgb(43, 46, 47);
+    border-color: rgb(43, 46, 47);
+    color: white;
+}
+.btn-floating{
+    color: white;
+}
+
 /*div {*/
 /*  border-color: #faff00 !important;*/
 /*  border-style: solid;*/
