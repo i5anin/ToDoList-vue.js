@@ -1,11 +1,11 @@
 import Home from "@/views/Page/Home";
 import Login from "@/views/Page/Login";
-import Todos from "@/views/Page/Todos";
-// import Create from "@/views/Page/Create";
+import Todos from "@/components/Todo-Filter-Output";
 import Task from "@/views/delete/Task";
-import Register from "@/views/Page/Register";
-import SignIn from "@/views/Page/SignIn";
+import Register from "@/views/Authentication/Register";
+import SignIn from "@/views/Authentication/SignIn";
 import Test from "@/views/Test"; //DELETE
+// import Create from "@/views/Page/Create";
 
 /*import authGuard from "@/router/auth-guard";*/
 
