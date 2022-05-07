@@ -26,8 +26,8 @@ const router = useRouter(); // get a reference to our vue router
 const signIn = () => {
   signInWithEmailAndPassword(auth, email.value, password.value) // THIS LINE CHANGED
     .then((data) => {
-      console.log("Successfully logged in!");
-      router.push("/todo"); // redirect to the feed
+      console.log("Успешно вошел в систему!");
+      router.push("/todos"); // redirect to the feed
     })
     .catch((error) => {
       switch (error.code) {
