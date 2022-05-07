@@ -32,16 +32,17 @@ const signIn = () => {
     .catch((error) => {
       switch (error.code) {
         case "auth/invalid-email":
-          errMsg.value = "Invalid email";
+          errMsg.value = "Неверный адрес электронной почты";
           break;
         case "auth/user-not-found":
-          errMsg.value = "No account with that email was found";
+          errMsg.value =
+            "Учетная запись с этим адресом электронной почты найдена не была";
           break;
         case "auth/wrong-password":
-          errMsg.value = "Incorrect password";
+          errMsg.value = "Неверный пароль";
           break;
         default:
-          errMsg.value = "Email or password was incorrect";
+          errMsg.value = "Адрес электронной почты или пароль были неверны";
           break;
       }
     });
