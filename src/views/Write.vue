@@ -1,33 +1,32 @@
-<!--<template></template>-->
+<template></template>
 
-<!--<script>-->
-<!--export default {-->
-<!--  name: "Write",-->
-<!--};-->
+<script>
+//Code for set()
+import { ref, set, update } from "firebase/database";
+import { database } from "@/firebase";
 
-<!--//Code to generate key-->
-<!--const newKey = push(child(gameListRef, "GameSession")).key;-->
-<!--let key = newKey.substring(1);-->
+export default {
+  name: "Write",
+};
 
-<!--//Code for set()-->
-<!--import { getDatabase, ref, set } from "firebase/database";-->
+//Code to generate key
+const newKey = push(child(gameListRef, "GameSession")).key;
+let key = newKey.substring(1);
 
-<!--function writeUserData(userId) {-->
-<!--    const db = getDatabase();-->
-<!--    set(ref(db, 'users/' + userId), {-->
-<!--        username: “JohnDoe”,-->
-<!--});-->
-<!--}-->
+function writeUserData(userId) {
+  set(ref(database, "users/" + userId), {
+    username: "JohnDoe",
+  });
+}
 
-<!--//Code for update()-->
-<!--import { getDatabase, ref, update } from "firebase/database";-->
+//Code for update()
 
-<!--function updateUserData(userId) {-->
-<!--    const db = getDatabase();-->
-<!--    update(ref(db, 'users/' + userId), {-->
-<!--        username: "JohnDoe",-->
-<!--    });-->
-<!--}-->
-<!--</script>-->
+function updateUserData(userId) {
+  const db = getDatabase();
+  update(ref(db, "users/" + userId), {
+    username: "JohnDoe",
+  });
+}
+</script>
 
-<!--<style scoped></style>-->
+<style scoped></style>

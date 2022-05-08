@@ -20,6 +20,8 @@
 </template>
 
 <script>
+import { ref, set, update } from "firebase/database";
+import { database } from "@/firebase";
 export default {
   data() {
     return {
@@ -29,17 +31,12 @@ export default {
   },
   methods: {
     onSubmit() {
-      if (this.title.trim()) {
-        //Создание нового TO DO если в поле title чтото есть, тогда создать обект:
-        const newTodo = {
-          //параметры созданного TO DO:
-          id: Date.now(), //новый  id
-          title: this.title, //название TO DO
-          completed: false, //нет смысла сразу завершать TO DO
-        };
-        this.$emit("add-todo", newTodo); //"Пользовательские события" сообщить app компненту что у нас появился новый TO DO
-        this.title = ""; //значение посе ввода
-      }
+      set(ref(database, "users/" + "123"), {
+        id: Date.now(), //новый  id
+        title: this.title, //название TO DO
+        completed: false, //нет смысла сразу завершать TO DO
+      });
+      this.title = ""; //значение посе ввода
     },
   },
 };
