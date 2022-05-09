@@ -1,13 +1,4 @@
 <script>
-// const todos = [
-//     userId: {
-//         tasks: [
-//             {}
-//         ],
-//         userName: ''
-//     }
-// ]
-
 import { auth, database } from "@/firebase";
 import { onValue, ref, set, update } from "firebase/database";
 

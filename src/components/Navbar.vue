@@ -14,21 +14,42 @@
           active-class="active"
           >{{ route.name }}</router-link
         >
+        <button v-if="isAuth" @click="logout">Выйти</button>
       </div>
     </div>
   </nav>
 </template>
 
 <script>
+import { auth } from "@/firebase";
+import { signOut } from "firebase/auth";
 import { AUTH_ROUTES, NOT_AUTH_ROUTES } from "../router/routes";
+import { useRouter } from "vue-router";
+import { onAuthStateChanged } from "firebase/auth";
 
 export default {
   data: () => ({
-    isAuth: true,
+    isAuth: false,
   }),
+  mounted() {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        this.isAuth = true;
+        const uid = user.uid;
+      }
+    });
+  },
   computed: {
     filteredRoutes() {
-      return this.isAuth ? AUTH_ROUTES : NOT_AUTH_ROUTES;
+      return this.isAuth ? AUTH_ROUTES : NOT_AUTH_ROUTES; //IF ELSE
+    },
+  },
+  methods: {
+    logout() {
+      signOut(auth).then(() => {
+        const router = useRouter();
+        router.push("/home");
+      });
     },
   },
 };

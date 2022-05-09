@@ -20,8 +20,8 @@
 </template>
 
 <script>
-import { ref, set, update } from "firebase/database";
-import { database } from "@/firebase";
+import { ref, set, update, push } from "firebase/database";
+import { auth, database } from "@/firebase";
 export default {
   data() {
     return {
@@ -31,12 +31,14 @@ export default {
   },
   methods: {
     onSubmit() {
-      set(ref(database, "users/" + "123"), {
-        id: Date.now(), //новый  id
-        title: this.title, //название TO DO
-        completed: false, //нет смысла сразу завершать TO DO
+      //передача данных в БД
+      push(ref(database, "tasks"), {
+        // id: Date.now(),
+        title: this.title,
+        completed: false,
+        userId: auth.currentUser.uid,
       });
-      this.title = ""; //значение посе ввода
+      this.title = ""; //значение после ввода
     },
   },
 };

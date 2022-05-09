@@ -72,9 +72,14 @@ export const ROUTES = [
 
 export const NOT_AUTH_ROUTES = [
   {
-    path: "/login",
-    name: "Авторизация",
-    component: Login,
+    path: "/register",
+    name: "Регистрация",
+    component: Register,
+  },
+  {
+    path: "/sign-in",
+    name: "Войти",
+    component: SignIn,
   },
 ];
 
@@ -83,15 +88,5 @@ export const AUTH_ROUTES = [
     path: "/todos",
     name: "Задачи",
     component: Todos,
-  },
-  {
-    path: "/register",
-    name: "Регистрация",
-    component: Register,
-  },
-  {
-    path: "/sign-in",
-    name: "Войти",
-    component: Task,
   },
 ];

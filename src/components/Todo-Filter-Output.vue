@@ -32,51 +32,60 @@
 import TodoList from "@/components/Todo-List";
 import AddTodo from "@/components/Todo-Add";
 import Loader from "@/components/Loader";
-import { onValue, ref, update } from "firebase/database";
-import { database } from "@/firebase";
+import { onValue, ref, update, equalTo, query } from "firebase/database";
+import { auth, database } from "@/firebase";
 
 //???
 export default {
   name: "App",
   data() {
     return {
-      todos: [],
+      todos: [
+        // { id: 3, title: "Купить хлеб", completed: false },
+        // { id: 4, title: "Купить масло", completed: false },
+        // { id: 5, title: "Купить пиво", completed: false },
+      ],
       loading: true,
       filter: "all",
     };
   },
 
-  //Данные с сервера:
-  //   const reference = ref(database, "todos/" + this.userId + "/tasks/");
-  //   onValue(reference, (snapshot) => {
-  //   const tasks = snapshot.val();
-  //   this.tasks = tasks.filter((task) => task.completed === false);
-  // });
-  // },
-  // createTask() {
-  //   this.tasks.push(this.newTask);
-  //   const updates = {};
-  //   updates["todos/" + this.userId + "/tasks/"] = this.tasks;
-  //   return update(ref(database), updates);
-  // },
-  // deleteTask(id) {
-  //   const filteredTasks = this.tasks.filter((task) => task.id !== id);
-  //   const updates = {};
-  //   updates["todos/" + this.userId + "/tasks/"] = filteredTasks;
-  //   return update(ref(database), updates);
+  // methods: {
+  // onSubmit()
+  //   {
+  //     const startCountedRef = ref (database, "users/" + username);
+  //     onValue(startCountedRef,(snapshot =>
+  //     {
+  //       const  data = snapshot.val();
+  //       alert(data.title);
+  //     }
+  //   },
 
   mounted() {
-    fetch("//jsonplaceholder.typicode.com/todos?_limit=3")
-      .then((response) => response.json())
-      .then((json) => {
-        setTimeout(() => {
-          this.todos = json;
-          this.loading = false;
-          //исскуственная задержка сервера:
-        }, 555);
-      });
+    this.fetchData();
+    // fetch("//jsonplaceholder.typicode.com/todos?_limit=3")
+    //   .then((response) => response.json())
+    //   .then((json) => {
+    //     setTimeout(() => {
+    //       this.todos = json;
+    //       this.loading = false;
+    //       console.log(json);
+    //       // исскуственная задержка сервера:
+    //     }, 555);
+    //   });
   },
   methods: {
+    fetchData() {
+      const reference = query(
+        ref(database, "tasks"),
+        equalTo(auth.currentUser.uid, "userId")
+      );
+      onValue(reference, (snapshot) => {
+        // this.todos = snapshot.val();
+        console.log(snapshot.val());
+        this.loading = false;
+      });
+    },
     removeTodo(id) {
       this.todos = this.todos.filter((t) => t.id !== id);
     },
