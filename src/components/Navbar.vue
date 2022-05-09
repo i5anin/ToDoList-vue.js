@@ -35,7 +35,6 @@ export default {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         this.isAuth = true;
-        const uid = user.uid;
       }
     });
   },

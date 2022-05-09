@@ -3,7 +3,7 @@
   <div>
     <h5>Приложение Todo</h5>
     <router-view />
-    <AddTodo @add-todo="addTodo" />
+    <AddTodo />
 
     <!-- Фильтр: -->
     <div class="container">
@@ -32,65 +32,36 @@
 import TodoList from "@/components/Todo-List";
 import AddTodo from "@/components/Todo-Add";
 import Loader from "@/components/Loader";
-import { onValue, ref, update, equalTo, query } from "firebase/database";
+import { onValue, ref } from "firebase/database";
 import { auth, database } from "@/firebase";
+import { onAuthStateChanged } from "firebase/auth";
 
-//???
 export default {
   name: "App",
   data() {
     return {
-      todos: [
-        // { id: 3, title: "Купить хлеб", completed: false },
-        // { id: 4, title: "Купить масло", completed: false },
-        // { id: 5, title: "Купить пиво", completed: false },
-      ],
+      todos: [],
       loading: true,
       filter: "all",
     };
   },
-
-  // methods: {
-  // onSubmit()
-  //   {
-  //     const startCountedRef = ref (database, "users/" + username);
-  //     onValue(startCountedRef,(snapshot =>
-  //     {
-  //       const  data = snapshot.val();
-  //       alert(data.title);
-  //     }
-  //   },
-
-  mounted() {
-    this.fetchData();
-    // fetch("//jsonplaceholder.typicode.com/todos?_limit=3")
-    //   .then((response) => response.json())
-    //   .then((json) => {
-    //     setTimeout(() => {
-    //       this.todos = json;
-    //       this.loading = false;
-    //       console.log(json);
-    //       // исскуственная задержка сервера:
-    //     }, 555);
-    //   });
+  created() {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        this.fetchData();
+      }
+    });
   },
   methods: {
     fetchData() {
-      const reference = query(
-        ref(database, "tasks"),
-        equalTo(auth.currentUser.uid, "userId")
-      );
+      const reference = ref(database, "tasks/" + auth.currentUser.uid);
       onValue(reference, (snapshot) => {
-        // this.todos = snapshot.val();
-        console.log(snapshot.val());
+        this.todos = Object.values(snapshot.val());
         this.loading = false;
       });
     },
     removeTodo(id) {
       this.todos = this.todos.filter((t) => t.id !== id);
-    },
-    addTodo(todo) {
-      this.todos.push(todo);
     },
   },
   components: {

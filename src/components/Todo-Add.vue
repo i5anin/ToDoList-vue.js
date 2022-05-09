@@ -32,11 +32,9 @@ export default {
   methods: {
     onSubmit() {
       //передача данных в БД
-      push(ref(database, "tasks"), {
-        // id: Date.now(),
+      push(ref(database, "tasks/" + auth.currentUser.uid), {
         title: this.title,
         completed: false,
-        userId: auth.currentUser.uid,
       });
       this.title = ""; //значение после ввода
     },
