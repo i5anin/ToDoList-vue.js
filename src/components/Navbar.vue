@@ -14,7 +14,14 @@
           active-class="active"
           >{{ route.name }}</router-link
         >
-        <button v-if="isAuth" @click="logout">Выйти</button>
+        <button
+          class="waves-effect waves-light btn"
+          type="submit"
+          v-if="isAuth"
+          @click="logout"
+        >
+          Выйти
+        </button>
       </div>
     </div>
   </nav>
@@ -23,9 +30,10 @@
 <script>
 import { auth } from "@/firebase";
 import { signOut } from "firebase/auth";
-import { AUTH_ROUTES, NOT_AUTH_ROUTES } from "../router/routes";
+import { AUTH_ROUTES, NOT_AUTH_ROUTES } from "../views/Auth/routes";
 import { useRouter } from "vue-router";
 import { onAuthStateChanged } from "firebase/auth";
+// const router = useRouter();
 
 export default {
   data: () => ({
@@ -47,7 +55,8 @@ export default {
     logout() {
       signOut(auth).then(() => {
         const router = useRouter();
-        router.push("/home");
+        console.log("Выход из системы");
+        router.replace("/home");
       });
     },
   },
@@ -67,5 +76,11 @@ nav {
 .routes {
   display: flex;
   gap: 20px;
+}
+
+.btn {
+  top: 13px;
+  background-color: #ffffff !important;
+  color: #000;
 }
 </style>

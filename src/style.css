@@ -1,7 +1,7 @@
 :root {
     --white: #f2f2f2;
     --theme: #208b81;
-    --gray: #7d848b;
+    --gray: #6a6a6d;
     --bg-black: #2b2e2f;
 
 
@@ -28,15 +28,22 @@ select:focus {
     color: var(--white);
 }
 /* расположение текста в кнопке */
-.waves-effect {
-    overflow: visible;
-}
+/*.waves-effect {*/
+/*    overflow: visible;*/
+/*}*/
 .btn {
     background-color: var(--theme);
 }
 /*цвет теста внутри*/
 input{
     color: var(--gray) !important;
+}
+
+hr {
+    border: none; /* Убираем границу для браузера Firefox */
+    color: var(--gray); /* Цвет линии для остальных браузеров */
+    background-color: var(--gray); /* Цвет линии для браузера Firefox и Opera */
+    height: 1px; /* Толщина линии */
 }
 
 /*.btn-floating {*/

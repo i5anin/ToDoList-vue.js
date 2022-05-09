@@ -1,18 +1,32 @@
 <template>
   <div>
-    <h3>{{ title }}</h3>
-    <p>{{ getSubTitle() }}</p>
+    <h3>{{ hometitle }}</h3>
+    <div>
+      <router-link to="/singin">
+        <button class="waves-effect waves-light btn-large" @click="register">
+          Войти
+        </button>
+      </router-link>
+      <h6>или</h6>
+      <router-link to="/singin">
+        <button
+          class="waves-effect waves-light btn-small disabled"
+          @click="register"
+        >
+          Зарегистрироваться
+        </button>
+      </router-link>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   data: () => ({
-    title: "Домашняя страница", //Домашняя страница
+    hometitle: "Добро пожаловать в ToDoList", //Добро пожаловать в мой ToDoList v0.0.1
     count: 0,
   }),
   created() {
-    console.log(this.title);
     this.sum();
   },
   watch: {
@@ -26,14 +40,9 @@ export default {
     },
   },
   methods: {
-    getSubTitle() {
-      return "Добро пожаловать в ToDoList v0.0.2"; //Добро пожаловать в мой ToDoList v0.0.1
-    },
-    sum() {
-      console.log(2 + 2);
-    },
+    sum() {},
     changeTitle() {
-      this.title += " Новый заголовок";
+      this.hometitle += " Новый заголовок";
     },
     changeCount() {
       this.count++;

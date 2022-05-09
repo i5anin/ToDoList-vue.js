@@ -12,7 +12,7 @@
         />
         <!--  кнопка создания нового TO DO-->
         <button class="waves-effect waves-light btn" type="submit">
-          Создать
+          Создать<i class="material-icons right">send</i>
         </button>
       </form>
     </div>

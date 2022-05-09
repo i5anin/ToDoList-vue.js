@@ -1,8 +1,9 @@
 import Home from "@/views/Page/Home";
 import Login from "@/views/Page/Login";
 import Todos from "@/components/Todo-Filter-Output";
-import Register from "@/views/Authentication/Register";
-import SignIn from "@/views/Authentication/SignIn";
+import Register from "@/views/Auth/Register";
+import SignIn from "@/views/Auth/SignIn";
+// import {auth.currentUser.uid} from "@/firebase";
 
 export const ROUTES = [
   {
@@ -21,7 +22,7 @@ export const ROUTES = [
     component: Register,
   },
   {
-    path: "/sign-in",
+    path: "/signin",
     name: "Авторизация",
     component: SignIn,
   },
@@ -39,7 +40,7 @@ export const NOT_AUTH_ROUTES = [
     component: Register,
   },
   {
-    path: "/sign-in",
+    path: "/signin",
     name: "Войти",
     component: SignIn,
   },
@@ -51,4 +52,9 @@ export const AUTH_ROUTES = [
     name: "Задачи",
     component: Todos,
   },
+  // {
+  //   path: { auth.currentUser.uid },
+  //   name: { auth.currentUser.uid },
+  //   component: Todos,
+  // },
 ];

@@ -1,17 +1,19 @@
 <template>
   <div class="container">
-    <h3>Создать учетную запись</h3>
-    <div class="wrapper">
-      <input type="text" placeholder="Email" v-model="email" />
-      <input type="password" placeholder="Пароль" v-model="password" />
-      <input
-        type="password"
-        placeholder="Повторите пароль"
-        v-model="password"
-      />
-      <button class="waves-effect waves-light btn" @click="register">
-        Отправить
-      </button>
+    <div class="container">
+      <h3>Создать учетную запись</h3>
+      <div class="wrapper">
+        <input type="text" placeholder="Email" v-model="email" />
+        <input type="password" placeholder="Пароль" v-model="password" />
+        <input
+          type="password"
+          placeholder="Повторите пароль"
+          v-model="password"
+        />
+        <button class="waves-effect waves-light btn" @click="register">
+          Отправить
+        </button>
+      </div>
     </div>
   </div>
 </template>
