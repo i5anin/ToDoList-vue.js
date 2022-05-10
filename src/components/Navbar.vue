@@ -55,8 +55,12 @@ export default {
     logout() {
       signOut(auth).then(() => {
         const router = useRouter();
-        console.log("Выход из системы");
-        router.replace("/home");
+        // todo: error не отрабатывает push
+        setTimeout(() => {
+          console.log("Выход из системы");
+          router.push("/home");
+          // исскуственная задержка:
+        }, 3000);
       });
     },
   },

@@ -2,9 +2,10 @@
 <template>
   <div class="row tab">
     <div class="col s1">{{ index + 1 }}</div>
+    <div class="col s2">0:00</div>
     <div align="left" class="col s6">{{ todo.title.toUpperCase() }}</div>
     <div class="col s2">Тег</div>
-    <div class="col s2">Примечание</div>
+
     <button
       class="btn-floating btn-small waves-effect waves-teal btn-flat waves-light"
       @click="handleDelete(todo.id)"
