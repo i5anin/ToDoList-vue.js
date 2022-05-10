@@ -5,10 +5,10 @@
       <form @submit.prevent="onSubmit">
         <!-- атрибут v-model превращает title в модель -->
         <input
+          v-model="title"
           placeholder="Текст задачи"
           class="form-control"
           type="text"
-          v-model="title"
         />
         <!--  кнопка создания нового TO DO-->
         <button class="waves-effect waves-light btn" type="submit">
@@ -23,15 +23,15 @@
 import { ref, set, update, push } from "firebase/database";
 import { auth, database } from "@/firebase";
 export default {
+  //начальое значение
   data() {
     return {
-      //вернуть пустое значение
       title: "",
     };
   },
+  //передача данных в БД
   methods: {
     onSubmit() {
-      //передача данных в БД
       push(ref(database, "tasks/" + auth.currentUser.uid), {
         title: this.title,
         completed: false,
@@ -47,7 +47,7 @@ form {
   display: flex; /* расположение поля для создания */
 }
 
-input {
-  width: 400px; /* ??? */
-}
+/*input {*/
+/*  width: 400px; !* ??? *!*/
+/*}*/
 </style>

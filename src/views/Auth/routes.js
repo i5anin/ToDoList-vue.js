@@ -1,9 +1,10 @@
 import Home from "@/views/Page/Home";
 import Login from "@/views/Page/Login";
-import Todos from "@/components/Todo-Filter-Output";
+
 import Register from "@/views/Auth/Register";
 import SignIn from "@/views/Auth/SignIn";
-// import {auth.currentUser.uid} from "@/firebase";
+
+import Todos from "@/components/Todos";
 
 export const ROUTES = [
   {

@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import TodoItem from "@/components/Todo-Item";
+import TodoItem from "@/components/TodoItem";
 export default {
   props: ["todos"],
   components: {

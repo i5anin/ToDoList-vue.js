@@ -1,16 +1,16 @@
 // Фильтр и навигация
 <template>
   <div>
-    <h5>Приложение Todo</h5>
+    <h5>Список задач</h5>
     <router-view />
-    <AddTodo />
+    <TodoAdd />
 
     <!-- Фильтр: -->
     <div class="container">
       <div class="container">
         <div class="container">
           <select class="select" v-model="filter">
-            <option value="all">Все</option>
+            <option value="all">Все задачи</option>
             <option value="completed">Завершенные</option>
             <option value="not-completed">Не завершенные</option>
           </select>
@@ -18,6 +18,7 @@
       </div>
     </div>
 
+    <!-- Loader: -->
     <Loader class="loader" v-if="loading" />
     <TodoList
       v-else-if="todos.length"
@@ -29,14 +30,16 @@
 </template>
 
 <script>
-import TodoList from "@/components/Todo-List";
-import AddTodo from "@/components/Todo-Add";
+import TodoList from "@/components/TodoList";
+import TodoAdd from "@/components/TodoAdd";
 import Loader from "@/components/Loader";
-import { onValue, ref } from "firebase/database";
+//firebase
 import { auth, database } from "@/firebase";
+import { onValue, ref } from "firebase/database";
 import { onAuthStateChanged } from "firebase/auth";
 
 export default {
+  //значения по умолчанию:
   name: "App",
   data() {
     return {
@@ -45,7 +48,9 @@ export default {
       filter: "all",
     };
   },
+  //создание:
   created() {
+    //https://firebase.google.com/docs/reference/js/auth.auth#authonauthstatechanged onAuthStateChanged
     onAuthStateChanged(auth, (user) => {
       if (user) {
         this.fetchData();
@@ -53,6 +58,7 @@ export default {
     });
   },
   methods: {
+    //получать данные
     fetchData() {
       const reference = ref(database, "tasks/" + auth.currentUser.uid);
       onValue(reference, (snapshot) => {
@@ -60,13 +66,14 @@ export default {
         this.loading = false;
       });
     },
+    //удалить To do
     removeTodo(id) {
       this.todos = this.todos.filter((t) => t.id !== id);
     },
   },
   components: {
     TodoList,
-    AddTodo,
+    TodoAdd,
     Loader,
   },
 };
