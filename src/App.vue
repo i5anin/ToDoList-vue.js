@@ -3,7 +3,6 @@
     <Navbar />
     <div class="container">
       <div class="col s12 m4 l8 center">
-        <h3 class="while">ToDoList MONEY WAY</h3>
         <router-view />
         <hr />
         <Footer />
