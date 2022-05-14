@@ -13,21 +13,21 @@
       </button>
       <form @submit.prevent="onSubmit">
         <!-- атрибут v-model превращает title в модель -->
+        <input
+          type="time"
+          placeholder="Время входа"
+          v-model="formData.timeIn"
+        />
+        <input
+          type="time"
+          placeholder="Время выхода"
+          v-model="formData.timeOut"
+        />
 
         <input
           type="date"
           placeholder="Дата поступления..."
           v-model="formData.date"
-        />
-        <input
-          type="text"
-          placeholder="Описание дохода..."
-          v-model="formData.desc"
-        />
-        <input
-          type="number"
-          placeholder="Значение дохода..."
-          v-model="formData.value"
         />
       </form>
     </div>
@@ -41,20 +41,20 @@ import { reactive } from "vue";
 export default {
   setup(props, { emit }) {
     const formData = reactive({
-      desc: null,
-      value: null,
+      timeIn: null,
+      timeOut: null,
       date: null,
     });
 
     function FormHandler() {
       emit("add-income", {
-        desc: formData.desc,
-        value: formData.value,
+        timeIn: formData.timeIn,
+        timeOut: formData.timeOut,
         date: formData.date,
       });
 
-      formData.desc = null;
-      formData.value = null;
+      formData.timeIn = null;
+      formData.timeOut = null;
       formData.date = null;
     }
 
