@@ -16,10 +16,9 @@
 
         <input
           type="date"
-          placeholder="Income Date..."
+          placeholder="Дата поступления..."
           v-model="formData.date"
         />
-        <!--  кнопка создания нового TO DO-->
         <input
           type="text"
           placeholder="Описание дохода..."
@@ -29,11 +28,6 @@
           type="number"
           placeholder="Значение дохода..."
           v-model="formData.value"
-        />
-        <input
-          type="date"
-          placeholder="Дата поступления..."
-          v-model="formData.date"
         />
       </form>
     </div>
