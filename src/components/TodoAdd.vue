@@ -1,34 +1,17 @@
 <template>
   <div class="container">
-    <div class="col s12 m4 l8">
-      <!-- событие submit больше не будет перезагружать страницу -->
-      <input
-        v-model="title"
-        placeholder="Текст задачи"
-        class="form-control"
-        type="text"
-      />
-      <button class="waves-effect waves-light btn" type="submit">
-        Создать<i class="material-icons right">send</i>
-      </button>
-      <form @submit.prevent="onSubmit">
-        <!-- атрибут v-model превращает title в модель -->
-        <input
-          type="time"
-          placeholder="Время входа"
-          v-model="formData.timeIn"
-        />
-        <input
-          type="time"
-          placeholder="Время выхода"
-          v-model="formData.timeOut"
-        />
-
-        <input
-          type="date"
-          placeholder="Дата поступления..."
-          v-model="formData.date"
-        />
+    <div>
+      <input v-model="title" type="text" placeholder="Текст задачи" />
+      <form>
+        <input v-model="formData.timeIn" type="time" placeholder="Время IN" />
+        <input v-model="formData.timeOut" type="time" placeholder="Время OUT" />
+        <input v-model="formData.date" type="date" placeholder="Дата" />
+        <form @submit.prevent="onSubmit">
+          <button class="waves-effect waves-light btn" type="submit">
+            Создать
+            <i class="material-icons right">send</i>
+          </button>
+        </form>
       </form>
     </div>
   </div>
@@ -74,6 +57,9 @@ export default {
   methods: {
     onSubmit() {
       push(ref(database, "tasks/" + auth.currentUser.uid), {
+        timeIn: this.formData.timeIn,
+        timeOut: this.formData.timeOut,
+        date: this.formData.date,
         title: this.title,
         completed: false,
       });
@@ -88,7 +74,12 @@ form {
   display: flex; /* расположение поля для создания */
 }
 
-/*input {*/
-/*  width: 400px; !* ??? *!*/
-/*}*/
+input {
+  /*padding: 20px 20px 12px !important;*/
+  display: flex !important;
+  /*height: 30px !important;*/
+  /*border-radius: 10px !important;*/
+  line-height: 1.5 !important;
+  margin: 8px 8px 8px 8px !important;
+}
 </style>

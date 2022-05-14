@@ -3,10 +3,10 @@
     <ul>
       <strong>
         <div class="row tabH tableHeader">
-          <div class="col s1">#</div>
+          <div class="col s1" align="left">#</div>
           <div class="col s2">Время</div>
           <div class="col s6">Название</div>
-          <div class="col s2">Тег</div>
+          <div class="col s2">Дата</div>
         </div>
       </strong>
       <hr />

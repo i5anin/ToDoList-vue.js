@@ -1,10 +1,11 @@
 //Обекты внутри | HTML сегмент |
 <template>
   <div class="row tab">
-    <div class="col s1">{{ index + 1 }}</div>
-    <div class="col s2">0:00</div>
-    <div align="left" class="col s6">{{ todo.title.toUpperCase() }}</div>
-    <div class="col s2">Тег</div>
+    <div class="col s1" align="left">{{ index + 1 }}</div>
+    <div class="col s2">{{ todo.timeIn.toUpperCase() }}</div>
+    <div class="col s2">{{ todo.timeOut.toUpperCase() }}</div>
+    <div class="col s6" align="left">{{ todo.title.toUpperCase() }}</div>
+    <div class="col s2">{{ todo.date.toUpperCase() }}</div>
 
     <button
       class="btn-floating btn-small waves-effect waves-teal btn-flat waves-light"
