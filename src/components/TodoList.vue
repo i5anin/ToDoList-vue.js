@@ -47,5 +47,7 @@ export default {
   justify-content: space-between; /* расположение по краям */
   padding: 0.5rem 2rem; /* Применяется для всех 4 сторон */
   margin-bottom: 1rem;
+  /*background-color: #303334;*/
+  font-size: 15px;
 }
 </style>

@@ -5,7 +5,9 @@
     <div class="col s2">{{ todo.timeIn.toUpperCase() }}</div>
     <div class="col s2">{{ todo.timeOut.toUpperCase() }}</div>
     <div class="col s6" align="left">{{ todo.title.toUpperCase() }}</div>
-    <div class="col s2">{{ todo.date.toUpperCase() }}</div>
+    <div class="col s2">
+      <time type="date">{{ todo.date.toUpperCase() }}</time>
+    </div>
 
     <button
       class="btn-floating btn-small waves-effect waves-teal btn-flat waves-light"

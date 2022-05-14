@@ -82,4 +82,7 @@ input {
   line-height: 1.5 !important;
   margin: 8px 8px 8px 8px !important;
 }
+button {
+  margin: 8px 8px 8px 8px !important;
+}
 </style>
