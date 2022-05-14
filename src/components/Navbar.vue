@@ -30,7 +30,7 @@
 <script>
 import { auth } from "@/firebase";
 import { signOut } from "firebase/auth";
-import { AUTH_ROUTES, NOT_AUTH_ROUTES } from "../views/Auth/routes";
+import { AUTH_ROUTES, NOT_AUTH_ROUTES } from "../router/routes";
 import { useRouter } from "vue-router";
 import { onAuthStateChanged } from "firebase/auth";
 // const router = useRouter();

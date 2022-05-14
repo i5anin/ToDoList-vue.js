@@ -7,15 +7,11 @@
 
     <!-- Фильтр: -->
     <div class="container">
-      <div class="container">
-        <div class="container">
-          <select class="select" v-model="filter">
-            <option value="all">Все задачи</option>
-            <option value="completed">Завершенные</option>
-            <option value="not-completed">Не завершенные</option>
-          </select>
-        </div>
-      </div>
+      <select class="select" v-model="filter">
+        <option value="all">Все задачи</option>
+        <option value="completed">Завершенные</option>
+        <option value="not-completed">Не завершенные</option>
+      </select>
     </div>
 
     <!-- Loader: -->
@@ -57,6 +53,7 @@ export default {
       }
     });
   },
+
   methods: {
     //получать данные
     fetchData() {

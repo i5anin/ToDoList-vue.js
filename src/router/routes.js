@@ -1,5 +1,4 @@
 import Home from "@/views/Page/Home";
-import Login from "@/views/Page/Login";
 
 import Register from "@/views/Auth/Register";
 import SignIn from "@/views/Auth/SignIn";
@@ -11,11 +10,6 @@ export const ROUTES = [
     path: "/",
     name: "Home",
     component: Home,
-  },
-  {
-    path: "/login",
-    name: "Логин",
-    component: Login,
   },
   {
     path: "/register",
@@ -53,9 +47,4 @@ export const AUTH_ROUTES = [
     name: "Задачи",
     component: Todos,
   },
-  // {
-  //   path: { auth.currentUser.uid },
-  //   name: { auth.currentUser.uid },
-  //   component: Todos,
-  // },
 ];
