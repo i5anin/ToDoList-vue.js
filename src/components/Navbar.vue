@@ -2,7 +2,7 @@
   <nav class="#0d7569 teal darken-1">
     <!-- Green цвет Nav бара-->
     <div class="nav-wrapper">
-      <router-link to="/"> <img src="../png/to-do.png" /></router-link>
+      <router-link to="/"><img src="../png/to-do.png" /></router-link>
       <div class="routes">
         <div class="email">{{ email }}</div>
         <router-link
@@ -29,9 +29,9 @@
 <script>
 import { auth } from "@/firebase";
 import { signOut } from "firebase/auth";
-import { AUTH_ROUTES, NOT_AUTH_ROUTES } from "../router/routes";
 import { useRouter } from "vue-router";
 import { onAuthStateChanged } from "firebase/auth";
+import { AUTH_ROUTES, NOT_AUTH_ROUTES } from "../router/routes";
 
 export default {
   data: () => ({
