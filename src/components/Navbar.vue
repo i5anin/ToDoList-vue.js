@@ -39,12 +39,12 @@ import { onAuthStateChanged } from "firebase/auth";
 export default {
   data: () => ({
     isAuth: false,
+    email: auth.currentUser.email,
   }),
   mounted() {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         this.isAuth = true;
-        this.email = auth.currentUser.email;
       }
     });
   },
