@@ -2,10 +2,7 @@
   <nav class="#0d7569 teal darken-1">
     <!-- Green цвет Nav бара-->
     <div class="nav-wrapper">
-      <router-link to="/">
-        <img src="../png/to-do.png" width="77" height="77"
-      /></router-link>
-
+      <router-link to="/"> <img src="../png/to-do.png" /></router-link>
       <div class="routes">
         <div class="email">{{ email }}</div>
         <router-link
@@ -39,12 +36,13 @@ import { onAuthStateChanged } from "firebase/auth";
 export default {
   data: () => ({
     isAuth: false,
-    email: auth.currentUser.email,
+    email: "",
   }),
   mounted() {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         this.isAuth = true;
+        this.email = auth.currentUser.email;
       }
     });
   },
@@ -70,6 +68,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+img {
+  width: 77px;
+  height: 77px;
+}
 nav {
   padding: 0 2rem;
 }
