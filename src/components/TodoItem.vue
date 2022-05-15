@@ -50,7 +50,6 @@ export default {
 }
 
 .tab {
-  /*border: 1px solid #2b2b2b; !* обводка item *!*/
   display: flex;
   justify-content: space-between; /* расположение по краям */
   padding: 0.5rem 2rem; /* Применяется для всех 4 сторон */
@@ -60,10 +59,7 @@ export default {
 input {
   margin-right: 1rem; /* отступ справа */
 }
-/* TODO НЕ РАБОТАТЕТ: */
-div {
-  vertical-align: middle !important;
-}
+
 button {
   margin: 0px 0px 0px 20px !important;
 }

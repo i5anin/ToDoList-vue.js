@@ -1,8 +1,10 @@
 <template>
   <nav class="#0d7569 teal darken-1">
-    <!-- Green цвет Nav бара-->
+    <!-- Green цвет Nav бара -->
     <div class="nav-wrapper">
+      <!-- Левая часть -->
       <router-link to="/"><img src="../png/to-do.png" /></router-link>
+      <!-- Правая часть -->
       <div class="routes">
         <div class="email">{{ email }}</div>
         <router-link
@@ -55,6 +57,7 @@ export default {
     logout() {
       signOut(auth).then(() => {
         const router = useRouter();
+
         // todo: error не отрабатывает push
         setTimeout(() => {
           console.log("Выход из системы");
