@@ -5,7 +5,9 @@
       <router-link to="/">
         <img src="../png/to-do.png" width="77" height="77"
       /></router-link>
+
       <div class="routes">
+        <div class="email">{{ email }}</div>
         <router-link
           v-for="route in filteredRoutes"
           :key="route.path"
@@ -33,7 +35,6 @@ import { signOut } from "firebase/auth";
 import { AUTH_ROUTES, NOT_AUTH_ROUTES } from "../router/routes";
 import { useRouter } from "vue-router";
 import { onAuthStateChanged } from "firebase/auth";
-// const router = useRouter();
 
 export default {
   data: () => ({
@@ -43,6 +44,7 @@ export default {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         this.isAuth = true;
+        this.email = auth.currentUser.email;
       }
     });
   },
@@ -86,5 +88,8 @@ nav {
   top: 13px;
   background-color: #ffffff !important;
   color: #000;
+}
+.email {
+  font-weight: bold !important;
 }
 </style>

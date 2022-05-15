@@ -64,4 +64,7 @@ input {
 div {
   vertical-align: middle !important;
 }
+button {
+  margin: 0px 0px 0px 20px !important;
+}
 </style>
