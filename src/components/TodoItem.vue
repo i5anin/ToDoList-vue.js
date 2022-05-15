@@ -5,10 +5,14 @@
     <div class="col s2">{{ todo.timeIn.toUpperCase() }}</div>
     <div class="col s2">{{ todo.timeOut.toUpperCase() }}</div>
     <div class="col s6" align="left">{{ todo.title.toUpperCase() }}</div>
-    <div class="col s2">
-      <time type="date">{{ todo.date.toUpperCase() }}</time>
-    </div>
-
+    <div class="col s2">{{ todo.date.toUpperCase() }}</div>
+    <button
+      class="btn-floating btn-small waves-effect waves-teal btn-flat waves-light"
+      @click="handleDelete(todo.id)"
+      align="center"
+    >
+      Edit
+    </button>
     <button
       class="btn-floating btn-small waves-effect waves-teal btn-flat waves-light"
       @click="handleDelete(todo.id)"
@@ -34,7 +38,7 @@ export default {
   methods: {
     handleDelete(id) {
       // удаление задачи
-      this.$emit("remove-todo", id);
+      this.$emit(remove(), id);
     },
   },
 };
@@ -55,5 +59,9 @@ export default {
 
 input {
   margin-right: 1rem; /* отступ справа */
+}
+/* TODO НЕ РАБОТАТЕТ: */
+div {
+  vertical-align: middle !important;
 }
 </style>

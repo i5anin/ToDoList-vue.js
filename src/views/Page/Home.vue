@@ -51,4 +51,8 @@ export default {
 };
 </script>
 
-<style lang="css"></style>
+<style scoped lang="css">
+button {
+  margin: 8px 8px 8px 8px !important;
+}
+</style>

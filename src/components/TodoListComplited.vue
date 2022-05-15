@@ -2,12 +2,7 @@
   <div>
     <ul>
       <strong>
-        <div class="row tabH tableHeader">
-          <div class="col s1" align="left">#</div>
-          <div class="col s2">Время</div>
-          <div class="col s6">Название</div>
-          <div class="col s2">Дата</div>
-        </div>
+        <div class="row tabH tableHeader"></div>
       </strong>
       <hr />
 
@@ -45,10 +40,5 @@ export default {
   justify-content: space-between; /* расположение по краям */
   padding: 0.5rem 2rem; /* Применяется для всех 4 сторон */
   margin-bottom: 1rem;
-  /*background-color: #303334;*/
 }
-
-/*div {*/
-/*  border-color: red !important;*/
-/*}*/
 </style>
