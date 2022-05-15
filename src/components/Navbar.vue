@@ -71,6 +71,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+div {
+  margin: 0 15px 0 0 !important;
+}
 img {
   width: 77px;
   height: 77px;
