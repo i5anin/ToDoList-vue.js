@@ -56,15 +56,8 @@ form {
   display: flex; /* расположение поля для создания */
 }
 
+button,
 input {
-  /*padding: 20px 20px 12px !important;*/
-  display: flex !important;
-  /*height: 30px !important;*/
-  /*border-radius: 10px !important;*/
-  line-height: 1.5 !important;
-  margin: 8px 8px 8px 8px !important;
-}
-button {
-  margin: 8px 8px 8px 8px !important;
+  margin: 8px 8px 8px 8px !important; /* расположение данных ввода и кнопки */
 }
 </style>
