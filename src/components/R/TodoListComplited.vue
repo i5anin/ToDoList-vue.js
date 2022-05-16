@@ -33,7 +33,7 @@ export default {
 </script>
 
 <style scoped>
-@import "../../node_modules/materialize-css";
+@import "../../../node_modules/materialize-css";
 .tableHeader {
   font-size: 15px;
   display: flex;

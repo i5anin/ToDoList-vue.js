@@ -27,7 +27,6 @@ import { useRouter } from "vue-router";
 //TODO добавить подтверждение почты
 const email = ref("");
 
-//TODO добавить подтверждение пароля
 const password = ref("");
 const password2 = ref("");
 const router = useRouter(); // получить ссылку на наш маршрутизатор vue
