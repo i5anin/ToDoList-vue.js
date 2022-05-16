@@ -18,16 +18,16 @@
 import { ref } from "vue";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "@/firebase";
-import { useRouter } from "vue-router"; // import router
+import { useRouter } from "vue-router"; // импорт маршрутизатора
 const email = ref("");
 const password = ref("");
-const errMsg = ref(); // ERROR MESSAGE
-const router = useRouter(); // get a reference to our vue router
+const errMsg = ref(); // СООБЩЕНИЕ ОБ ОШИБКЕ
+const router = useRouter(); // получить ссылку на наш маршрутизатор vue
 const signIn = () => {
-  signInWithEmailAndPassword(auth, email.value, password.value) // THIS LINE CHANGED
+  signInWithEmailAndPassword(auth, email.value, password.value) // ЭТА СТРОКА ИЗМЕНЕНА
     .then((data) => {
       console.log("Успешно вошёл в систему!");
-      router.push("/todos"); // redirect to the feed
+      router.push("/todos"); // перенаправление на канал
     })
     .catch((error) => {
       switch (error.code) {

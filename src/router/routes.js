@@ -1,7 +1,7 @@
 import Home from "@/views/Page/Home";
 
-import Register from "@/views/Auth/Register";
-import SignIn from "@/views/Auth/SignIn";
+import Register from "@/store/Register";
+import SignIn from "@/store/SignIn";
 
 import Todos from "@/components/Todos";
 
