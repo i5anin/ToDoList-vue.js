@@ -10,28 +10,57 @@
         </div>
       </strong>
       <hr />
-
-      <TodoItem
-        v-for="(todo, i) in todos"
-        :key="i"
-        :index="i"
-        :todo="todo"
-        @remove-todo="removeTodo"
-      />
+      <!-- Loader: -->
+      <Loader class="loader" v-if="loading" />
+      <div v-else-if="todos.length">
+        <TodoItem v-for="(todo, i) in todos" :key="i" :index="i" :todo="todo" />
+      </div>
+      <p v-else>Нет задач</p>
     </ul>
   </div>
 </template>
 
 <script>
+import Loader from "@/components/Loader.vue";
 import TodoItem from "@/components/TodoItem";
+//firebase
+import { auth, database } from "@/firebase";
+import { onAuthStateChanged } from "firebase/auth";
+import { onValue, ref } from "firebase/database";
+
 export default {
-  props: ["todos"],
+  data() {
+    return {
+      loading: false,
+      todos: [],
+    };
+  },
   components: {
     TodoItem,
+    Loader,
   },
+  created() {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        this.fetchData();
+      }
+    });
+  },
+
   methods: {
-    removeTodo(id) {
-      this.$emit("remove-todo", id);
+    //получать данные
+    fetchData() {
+      this.loadind = true;
+      const reference = ref(database, "tasks/" + auth.currentUser.uid);
+      onValue(reference, (snapshot) => {
+        this.todos = [];
+        snapshot.forEach((childSnapshot) => {
+          const childKey = childSnapshot.key;
+          const childData = childSnapshot.val();
+          this.todos.push({ id: childKey, ...childData });
+        });
+        this.loading = false;
+      });
     },
   },
 };

@@ -36,13 +36,14 @@ export default {
   methods: {
     onSubmit() {
       push(ref(database, "tasks/" + auth.currentUser.uid), {
+        title: this.title,
         timeIn: this.timeIn,
         timeOut: this.timeOut,
         date: this.date,
-        title: this.title,
         completed: false,
       });
-      this.title = ""; //значение после ввода
+      //значение после ввода
+      this.title = "";
       this.timeIn = "";
       this.timeOut = "";
       this.date = "";
@@ -59,5 +60,9 @@ form {
 button,
 input {
   margin: 8px 8px 8px 8px !important; /* расположение данных ввода и кнопки */
+}
+
+input {
+  width: 0;
 }
 </style>

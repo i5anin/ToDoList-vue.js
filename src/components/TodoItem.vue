@@ -5,26 +5,34 @@
     <div class="col s2">{{ todo.timeIn.toUpperCase() }}</div>
     <div class="col s2">{{ todo.timeOut.toUpperCase() }}</div>
     <div class="col s6" align="left">{{ todo.title.toUpperCase() }}</div>
-    <div class="col s2">{{ todo.date.toUpperCase() }}</div>
-    <button
-      class="btn-floating btn-small waves-effect waves-teal btn-flat waves-light"
-      @click="handleDelete(todo.id)"
-      align="center"
-    >
-      Edit
-    </button>
-    <button
-      class="btn-floating btn-small waves-effect waves-teal btn-flat waves-light"
-      @click="handleDelete(todo.id)"
-      align="center"
-    >
-      &times;
-    </button>
+    <div class="col s2">
+      {{ new Date(todo.date.toUpperCase()).toLocaleDateString() }}
+    </div>
+    <div class="col s2">
+      <button
+        class="btn-floating btn-small waves-effect waves-teal btn-flat waves-light"
+        @click="EditTodo(todo.id)"
+        align="center"
+      >
+        EDIT
+      </button>
+    </div>
+    <div class="col s2">
+      <button
+        class="btn-floating btn-small waves-effect waves-teal btn-flat waves-light"
+        @click="handleDeleteTodo(todo.id)"
+        align="center"
+      >
+        &times;
+      </button>
+    </div>
   </div>
-  <!--  <hr />-->
 </template>
 
 <script>
+import { ref, remove } from "firebase/database";
+import { auth, database } from "@/firebase";
+
 export default {
   props: {
     todo: {
@@ -36,9 +44,9 @@ export default {
     },
   },
   methods: {
-    handleDelete(id) {
+    handleDeleteTodo(id) {
       // удаление задачи
-      this.$emit(remove(), id);
+      remove(ref(database, "tasks/" + auth.currentUser.uid + "/" + id));
     },
   },
 };
@@ -58,9 +66,5 @@ export default {
 
 input {
   margin-right: 1rem; /* отступ справа */
-}
-
-button {
-  margin: 0px 0px 0px 20px !important;
 }
 </style>
