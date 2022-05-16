@@ -9,7 +9,7 @@ node_modules
 
 ### Firebase Patch ###
 .runtimeconfig.json
-.firebase/
+
 
 # local env files
 .env.local
@@ -29,4 +29,3 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
-src/firebase/index.js
