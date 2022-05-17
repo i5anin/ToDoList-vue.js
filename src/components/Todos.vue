@@ -1,14 +1,14 @@
 // Фильтр и навигация
 <template>
   <div>
-    <h5>Список задач</h5>
+    <h5>Добавить задачу</h5>
     <router-view />
     <TodoAdd />
 
     <!-- Фильтр: -->
+    <h6>Список задач</h6>
     <div class="container">
       <select class="select" v-model="filter">
-        <option value="all">Все задачи</option>
         <option value="completed">Завершенные</option>
         <option value="not-completed">Не завершенные</option>
       </select>
@@ -27,7 +27,7 @@ export default {
   name: "App",
   data() {
     return {
-      filter: "all",
+      filter: "not-completed",
     };
   },
   //создание:
@@ -40,7 +40,7 @@ export default {
 </script>
 
 <style>
-.loader {
-  top: 0;
+.select {
+  display: block;
 }
 </style>

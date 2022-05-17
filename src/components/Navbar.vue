@@ -70,31 +70,25 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-div {
-  margin: 0 15px 0 0 !important;
-}
+<style scoped>
 img {
   width: 77px;
   height: 77px;
 }
 nav {
-  padding: 0 2rem;
+  padding: 0 3rem;
 }
-
 .nav-wrapper {
   display: flex;
   justify-content: space-between;
 }
-
 .routes {
   display: flex;
   gap: 20px;
 }
-
 .btn {
   top: 13px;
-  background-color: #ffffff !important;
+  background-color: white !important;
   color: #000;
 }
 .email {

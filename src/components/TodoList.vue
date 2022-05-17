@@ -2,11 +2,13 @@
   <div>
     <ul>
       <strong>
-        <div class="row tabH tableHeader">
+        <div class="row list">
           <div class="col s1" align="left">#</div>
           <div class="col s2">Время</div>
-          <div class="col s6">Название</div>
+          <div class="col s2">Время</div>
+          <div class="col s5">Название</div>
           <div class="col s2">Дата</div>
+          <div class="col s2">Кнопка</div>
         </div>
       </strong>
       <hr />
@@ -16,6 +18,7 @@
         <TodoItem v-for="(todo, i) in todos" :key="i" :index="i" :todo="todo" />
       </div>
       <p v-else>Нет задач</p>
+      <hr />
     </ul>
   </div>
 </template>
@@ -31,7 +34,7 @@ import { onValue, ref } from "firebase/database";
 export default {
   data() {
     return {
-      loading: false,
+      loading: true,
       todos: [],
     };
   },
@@ -65,19 +68,20 @@ export default {
   },
 };
 </script>
-
 <style scoped>
-@import "../../node_modules/materialize-css";
-.tableHeader {
-  font-size: 15px;
+div {
+  margin: 5px 0 5px 0 !important;
+}
+.list {
   display: flex;
+
+  border-radius: 10em;
   justify-content: space-between; /* расположение по краям */
   padding: 0.5rem 2rem; /* Применяется для всех 4 сторон */
   margin-bottom: 1rem;
-  /*background-color: #303334;*/
-}
+  align-items: center;
+  font-size: 16px;
 
-/*div {*/
-/*  border-color: red !important;*/
-/*}*/
+  background: var(--gray2);
+}
 </style>

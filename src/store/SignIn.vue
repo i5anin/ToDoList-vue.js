@@ -1,5 +1,5 @@
 <template>
-  <h2>Войти</h2>
+  <h3>Войти</h3>
   <div class="container">
     <div class="container">
       <div class="container">
@@ -48,3 +48,10 @@ const signIn = () => {
     });
 };
 </script>
+
+<style scoped>
+input,
+button {
+  margin: 12px !important;
+}
+</style>

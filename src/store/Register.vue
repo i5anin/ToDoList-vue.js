@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="container">
-      <h3>Создать учетную запись</h3>
+      <h4>Создать учетную запись</h4>
       <div class="wrapper">
         <input type="text" placeholder="Email" v-model="email" />
         <input type="password" placeholder="Пароль" v-model="password" />
@@ -46,8 +46,13 @@ const register = () => {
   }
 };
 </script>
-<style>
+<style scoped>
 .wrapper {
   padding: 0 40px;
+  margin: 30px !important;
+}
+input,
+button {
+  margin: 12px !important;
 }
 </style>

@@ -1,63 +1,28 @@
 :root {
     --white: #f2f2f2;
     --theme: #208b81;
-    --gray: #6a6a6d;
-    --bg-black: #2b2e2f;
-
-
+    --gray: #525255;
+    --gray2: #232626;
+    --black: #2b2e2f;
 }
 
-html {
-    color: #ffffff !important;
+body, .select {
+    background: var(--black);
+    border-color: var(--black);
 }
-body {
-    background: var(--bg-black);
-}
-/* фильтр */
-.select {
-    display: block;
-    background: var(--bg-black);
-    border-color: var(--bg-black);
+
+html,  input, .btn-floating, .select {
     color: var(--white);
-}
-select:focus {
-    outline: 1px solid var(--bg-black);
-}
-/* кнопка удаления обекта */
-.btn-floating{
-    color: var(--white);
-}
-/* расположение текста в кнопке */
-/*.waves-effect {*/
-/*    overflow: visible;*/
-/*}*/
-.btn {
-    background-color: var(--theme);
-}
-/*цвет теста внутри*/
-input{
-    color: var(--gray) !important;
 }
 
 hr {
-    border: none; /* Убираем границу для браузера Firefox */
     color: var(--gray); /* Цвет линии для остальных браузеров */
     background-color: var(--gray); /* Цвет линии для браузера Firefox и Opera */
+    border: none; /* Убираем границу для браузера Firefox */
     height: 1px; /* Толщина линии */
 }
 
-/*.btn-floating {*/
-/*    background-color:var(--theme);*/
-
-/*}*/
-/*.btn-floating {*/
-/*    background-color:var(--theme);*/
-/*}*/
 /* Отладка */
-/*div {*/
-/*  border: 1px solid #00c939 !important;*/
-/*}*/
-
-/*.tab {*/
-/*    border: 1px solid #ffffff; !* обводка item *!*/
-/*}*/
+div {
+  border: 1px solid #00c939 !important;
+}
