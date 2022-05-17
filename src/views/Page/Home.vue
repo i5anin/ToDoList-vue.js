@@ -2,13 +2,13 @@
   <div>
     <h3>{{ hometitle }}</h3>
     <div>
-      <router-link to="/singin">
+      <router-link to="/signin">
         <button class="waves-effect waves-light btn-large" @click="register">
           Войти
         </button>
       </router-link>
       <h6>или</h6>
-      <router-link to="/singin">
+      <router-link to="/register">
         <button
           class="waves-effect waves-light btn-small disabled"
           @click="register"
