@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import { ref, set, update, push } from "firebase/database";
+import { ref, push } from "firebase/database";
 import { auth, database } from "@/firebase";
 
 export default {
