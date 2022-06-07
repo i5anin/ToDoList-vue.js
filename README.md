@@ -1,8 +1,8 @@
-# to-do-list-2
+# ToDoList
 
 ## Project setup
 ```
-npm install
+npm i
 ```
 
 ### Compiles and hot-reloads for development
@@ -14,6 +14,11 @@ npm run serve
 ```
 npm run build
 ```
+
+запуск:
+
+node.js 16
+
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
