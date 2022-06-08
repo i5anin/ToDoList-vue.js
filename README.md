@@ -1,3 +1,29 @@
+# Online-ShowCase
+
+
+###### Требования
+##### node.js 16
+
+###### запуск:
+
+```
+npm cache clean --force
+```
+
+```
+npm i node-sass --force
+```
+
+```
+npm i 
+```
+
+
+
+## Vercel.com
+https://todolist-betaio-quantum-r.vercel.app
+
+
 # ToDoList
 
 ## Project setup
@@ -14,11 +40,6 @@ npm run serve
 ```
 npm run build
 ```
-
-запуск:
-
-node.js 16
-
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
