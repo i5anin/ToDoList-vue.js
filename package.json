@@ -15,7 +15,8 @@
     "progressive": "^0.1.0",
     "vue": "^3.2.13",
     "vue-router": "^4.0.14",
-    "vuex": "^4.0.2"
+    "vuex": "^4.0.2",
+    "protobufjs": ">=6.11.3"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~5.0.0",
