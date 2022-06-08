@@ -1,4 +1,4 @@
-# Online-ShowCase
+# ToDoList
 
 
 ###### Требования
@@ -18,14 +18,6 @@ npm i node-sass --force
 npm i 
 ```
 
-
-
-## Vercel.com
-https://todolist-betaio-quantum-r.vercel.app
-
-
-# ToDoList
-
 ## Project setup
 ```
 npm i
@@ -40,6 +32,9 @@ npm run serve
 ```
 npm run build
 ```
+
+## Vercel.com
+https://todolist-betaio-quantum-r.vercel.app
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
