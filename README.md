@@ -1,5 +1,23 @@
 # ToDoList
 
+
+###### Требования
+##### node.js 16
+
+###### запуск:
+
+```
+npm cache clean --force
+```
+
+```
+npm i node-sass --force
+```
+
+```
+npm i 
+```
+
 ## Project setup
 ```
 npm i
@@ -15,10 +33,8 @@ npm run serve
 npm run build
 ```
 
-запуск:
-
-node.js 16
-
+## Vercel.com
+https://todolist-betaio-quantum-r.vercel.app
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
